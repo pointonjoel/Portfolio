@@ -1,9 +1,11 @@
 import { FaBars } from "react-icons/fa";
+// import styled from "styled-components";
+// import themes from "../../styles/THEMES";
 import styled from "styled-components";
-import themes from "../../styles/THEMES";
 
 export const Nav = styled.nav`
-  background: ${themes.colours.secondary}; // 1 is the opacity
+  background: ${(props) => props.theme.colors.primary};
+
   height: 50px;
   display: flex;
   justify-content: right;
@@ -22,7 +24,7 @@ export const NavLink = styled.a`
   cursor: pointer;
 
   &.active {
-    color: ${themes.colours.main};
+    color: ${(props) => props.theme.colors.primary};
   }
 `;
 
@@ -74,7 +76,7 @@ export const NavBtn = styled.nav`
 
 export const NavBtnLink = styled.a`
   border-radius: 4px;
-  background: ${themes.colours.main};
+  background: ${(props) => props.theme.colors.primary};
   padding: 10px 22px;
   color: #fff;
   outline: none;

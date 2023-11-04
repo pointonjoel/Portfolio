@@ -1,9 +1,9 @@
 import Navbar from "../components/navbar/Navbar";
 import { Background } from "./indexStyles";
-import styled, { useTheme } from "styled-components";
+import styled from "styled-components";
 
 const Container = styled.div`
-  margin: 0;
+  margin-left: -150px;
   position: absolute;
   width: 550px;
   height: 150px;
@@ -11,7 +11,8 @@ const Container = styled.div`
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  background-color: ${(props) => props.theme.colors.primary};
+  /* background-color: ${(props) => props.theme.colors.primary}; */
+  background-color: white;
   border-color: black;
   border-style: solid;
   border-width: thin;
@@ -30,7 +31,7 @@ const Title = styled.p`
 function Main() {
   return (
     <section>
-      {/* <Navbar /> */}
+      <Navbar />
       <Background>
         <Container>
           <Title>Lily Pointon</Title>

@@ -2,6 +2,8 @@ import "../styles.css";
 import { AppProps } from "next/app";
 import { ThemeProvider } from "styled-components";
 import React, { useState, useEffect } from "react";
+import Head from "next/head";
+import HeadCode from "./HeadCode";
 
 const theme = {
   colors: {
@@ -21,6 +23,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <ThemeProvider theme={theme}>
+      <HeadCode />
       <Component {...pageProps} />
     </ThemeProvider>
   );

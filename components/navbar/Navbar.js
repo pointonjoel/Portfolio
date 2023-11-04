@@ -16,15 +16,9 @@ const Navbar = () => {
       <Nav>
         <Bars />
         <NavMenu>
-          <CustomLink to="/" activeStyle>
-            Home
-          </CustomLink>
-          <CustomLink to="/about" activeStyle>
-            About
-          </CustomLink>
-          <CustomLink to="/contact" activeStyle>
-            Contact
-          </CustomLink>
+          <CustomLink to="/" name="Home" activeStyle />
+          <CustomLink to="/About" name="About" activeStyle />
+          <CustomLink to="/Contact" name="Contact" activeStyle />
         </NavMenu>
         {/* <NavBtn>
           <NavBtnLink to="/signin">Sign In</NavBtnLink>
