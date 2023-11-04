@@ -1,9 +1,9 @@
 import Navbar from "../components/navbar/Navbar";
-import { Background } from "./indexStyles";
+import { MainBackground, Background } from "./indexStyles";
 import styled from "styled-components";
 
 const Container = styled.div`
-  margin-left: -150px;
+  /* margin-left: -150px; */
   position: absolute;
   width: 550px;
   height: 150px;
@@ -32,11 +32,12 @@ function Main() {
   return (
     <section>
       <Navbar />
-      <Background>
+      <MainBackground>
         <Container>
           <Title>Lily Pointon</Title>
         </Container>
-      </Background>
+      </MainBackground>
+      <Background></Background>
     </section>
   );
 }
