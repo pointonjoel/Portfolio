@@ -9,6 +9,7 @@ function HeadCode() {
         content="Lily Pointon's Portfolio"
         key="title"
       />
+      <style>@import url('https://fonts.cdnfonts.com/css/london-3');</style>{" "}
       <Script>
         {`(function(d) {
     var config = {

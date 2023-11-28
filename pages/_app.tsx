@@ -2,12 +2,12 @@ import "../styles.css";
 import { AppProps } from "next/app";
 import { ThemeProvider } from "styled-components";
 import React, { useState, useEffect } from "react";
-import Head from "next/head";
-import HeadCode from "./HeadCode";
+import HeadCode from "../components/code/HeadCode";
 
 const theme = {
   colors: {
     primary: "#CA948D",
+    secondary: "#FFFFFF",
   },
 };
 
