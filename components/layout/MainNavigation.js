@@ -16,15 +16,10 @@ function MainNavigation() {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/about">About Me</Link>
+            <Link to="/About">About Me</Link>
           </li>
           <li>
-            <Link to="/contact">
-              Contact
-              <span className={classes.badge}>
-                {favoritesCtx.totalFavorites}
-              </span>
-            </Link>
+            <Link to="/Contact">Contact</Link>
           </li>
         </ul>
       </nav>

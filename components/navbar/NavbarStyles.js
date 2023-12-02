@@ -1,5 +1,4 @@
 import { FaBars } from "react-icons/fa";
-// import styled from "styled-components";
 // import themes from "../../styles/THEMES";
 import styled from "styled-components";
 
@@ -24,7 +23,12 @@ export const NavLink = styled.a`
   cursor: pointer;
 
   &.active {
-    color: ${(props) => props.theme.colors.primary};
+    color: #000000;
+  }
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    color: #000000;
   }
 `;
 
@@ -32,12 +36,12 @@ export const Bars = styled(FaBars)`
   display: none;
   color: #fff;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 250px) {
     display: block;
     position: absolute;
     top: 0;
     right: 0;
-    transform: translate(-100%, 75%);
+    margin: 10px;
     font-size: 1.8rem;
     cursor: pointer;
   }
@@ -55,7 +59,7 @@ export const NavMenu = styled.div`
   /* width: 100vw;
   white-space: nowrap; */
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 250px) {
     display: none;
   }
 `;
@@ -90,7 +94,7 @@ export const NavBtnLink = styled.a`
 
   &:hover {
     transition: all 0.2s ease-in-out;
-    background: #fff;
-    color: #010606;
+    background: #000000;
+    color: #ffffff;
   }
 `;

@@ -1,63 +1,59 @@
 import styled from "styled-components";
 import backgroundImage from "../public/backgroundImage.png";
 import bioBackground from "../public/bioBackground.png";
+import mainRender from "../public/mainRender.png";
 import Image from "next/image";
+import css from "@styled-system/css";
 
-export const Background = styled.div`
-  height: 850px;
-  /* width: 100%; */
-  /* background-image: url(${backgroundImage.src});
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center; */
-`;
+export const Body = styled.body(
+  css({
+    backgroundImage: `url(${backgroundImage.src})`,
+    width: "100%",
+    backgroundSize: "contain",
+    backgroundRepeat: "repeat-y",
+    backgroundPosition: "left center",
+    backgroundSize: ["500px auto", "900px auto", "1000px auto"],
+  })
+);
 
-export const MainRender = styled(Image)`
-  display: block;
-  padding-top: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  transform: translateX(+50%);
-  /* width: 50%; */
-  /* margin-left: -30px; */
-`;
+export const Title = styled.div(
+  css({
+    width: "550px",
+    height: "150px",
+    px: "10px",
+    width: "40%",
+    minWidth: "200px",
+    bg: "white",
+    borderColor: "black",
+    borderStyle: "solid",
+    borderWidth: "thin",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    textAlign: "centre",
+    fontSize: "50px",
+    lineHeight: "110%",
+  })
+);
 
-export const Body = styled.body`
-  background-image: url(${backgroundImage.src});
-  width: 100%;
-  background-size: cover;
-  background-repeat: repeat;
-  background-position: center center;
-  background-size: 100% auto;
-`;
-
-export const TitleContainer = styled.div`
-  position: absolute;
-  width: 550px;
-  height: 150px;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  background-color: white;
-  border-color: black;
-  border-style: solid;
-  border-width: thin;
-`;
-
-export const Title = styled.p`
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  font-size: 50px;
-`;
+export const TitleContainer = styled.div(
+  css({
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    textAlign: "centre",
+    backgroundImage: `url(${mainRender.src})`,
+    backgroundSize: "contain",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center right",
+    backgroundSize: ["90% auto", "80% auto", "50% auto"],
+    height: ["300px", "400px", "550px"],
+  })
+);
 
 export const TypedText = styled.p`
-  overflow: hidden;
-  white-space: nowrap;
+  /* overflow: hidden; */
+  /* white-space: nowrap; */
   width: 0;
   animation: typing 1.5s forwards;
 

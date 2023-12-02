@@ -1,7 +1,6 @@
 import Navbar from "../components/navbar/Navbar";
 import {
   Body,
-  MainRender,
   Title,
   TitleContainer,
   Container,
@@ -18,50 +17,41 @@ import Link from "next/link";
 
 const OpeningSection = () => {
   return (
-    <div>
-      <MainRender src={mainRender} alt="Example render" width="900" />
-      <TitleContainer>
-        <Title>
-          <TypedText>{TextStore.home.title}</TypedText>
-        </Title>
-      </TitleContainer>
-    </div>
+    <TitleContainer>
+      <Title>
+        {/* {TextStore.home.title} */}
+        <TypedText>{TextStore.home.title}</TypedText>
+      </Title>
+    </TitleContainer>
   );
 };
 
 const PortfolioSamples = () => {
+  const allProjects = Object.values(TextStore.projects);
   return (
     <>
       <Header>Projects</Header>
       <ContainerDiv>
-        {Object.values(TextStore.projects).map((project) =>
-          project.homepage ? <PortfolioSection project={project} /> : null
+        {allProjects.map((project, index) =>
+          project.homepage ? (
+            <PortfolioSection project={project} id={index} />
+          ) : null
         )}
       </ContainerDiv>
     </>
   );
 };
 
-import project1Photo from "../public/Project_1.png";
-import project2Photo from "../public/Project_2.png";
-// import project3Photo from "../../public/Project_3.png";
-// import project4Photo from "../../public/Project_4.png";
-// import project5Photo from "../../public/Project_5.png";
-// import project6Photo from "../../public/Project_6.png";
-// let testing = require("../public/Project_1.png");
-
-const PortfolioSection = (project) => {
-  console.log(project1Photo); // /logo.84287d09.png
-
+const PortfolioSection = ({ project, id }) => {
   return (
-    <Link href="/" passHref legacyBehavior>
+    <Link href={`/Projects/${id}`} passHref legacyBehavior>
       <Container>
-        <ProjectTitle>{project.project.name}</ProjectTitle>
+        <ProjectTitle>{project.name}</ProjectTitle>
         <div style={{ height: "200px", position: "relative" }}>
           <Image
             fill={true}
             objectFit={"contain"}
-            src={project.project.photo}
+            src={project.photo}
             // alt={`Cover photo for ${project.project.name}`}
             // width={100}
           />

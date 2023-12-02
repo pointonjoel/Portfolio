@@ -1,14 +1,23 @@
 import React from "react";
 import Link from "next/link";
 import { Nav, NavLink, Bars, NavMenu } from "./NavbarStyles";
+import { useRouter } from "next/router";
 
-function CustomLink({ to, name }) {
+const CustomLink = ({ to, name }) => {
+  const router = useRouter();
+  console.log(router.pathname, to);
   return (
     <Link href={to} passHref legacyBehavior>
-      <NavLink>{name}</NavLink>
+      <NavLink
+        className={
+          router.pathname == to && router.pathname != "/" ? "active" : ""
+        }
+      >
+        {name}
+      </NavLink>
     </Link>
   );
-}
+};
 
 const Navbar = () => {
   return (
