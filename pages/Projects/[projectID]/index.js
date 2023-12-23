@@ -1,6 +1,8 @@
 import Navbar from "../../../components/navbar/Navbar";
 import { useRouter } from "next/router";
 import { TextStore } from "../../../components/text/TextStore";
+import { Button } from "./ProjectStyles";
+// import file from "../../../public/Project_2.pdf";
 
 const Project = () => {
   const router = useRouter();
@@ -9,7 +11,7 @@ const Project = () => {
   const allProjectNames = Object.keys(allProjects);
   const validProject = allProjectNames.includes(projectID);
   const project = allProjects[projectID];
-  console.log(validProject);
+  console.log(router.query);
   const ErrorContent = (
     <>
       <Navbar />
@@ -23,6 +25,11 @@ const Project = () => {
       <Navbar />
       <div>Enjoy my {project.name}!</div>
       <div>{project.description}!</div>
+      <div>
+        <a href="/Project_2.pdf" download="cv">
+          <Button primary="false">Download PDF</Button>
+        </a>
+      </div>
     </>
   );
   return validProject ? PageContent : ErrorContent;

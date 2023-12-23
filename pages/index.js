@@ -18,10 +18,7 @@ import Link from "next/link";
 const OpeningSection = () => {
   return (
     <TitleContainer>
-      <Title>
-        {/* {TextStore.home.title} */}
-        <TypedText>{TextStore.home.title}</TypedText>
-      </Title>
+      <Title>{TextStore.home.title}</Title>
     </TitleContainer>
   );
 };

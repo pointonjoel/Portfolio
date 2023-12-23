@@ -4,12 +4,11 @@ import styled from "styled-components";
 
 export const Nav = styled.nav`
   background: ${(props) => props.theme.colors.primary};
-
-  height: 50px;
+  min-height: 50px;
   display: flex;
   justify-content: right;
-  padding: 0.5rem 5vw;
-  z-index: 10;
+  padding: 0.5rem 2vw;
+  /* z-index: 10; */
 `;
 
 export const NavLink = styled.a`
@@ -18,9 +17,10 @@ export const NavLink = styled.a`
   align-items: center;
   text-decoration: none;
   padding: 0 1rem;
-  height: 100%;
+  height: 30px;
   font-weight: bold;
   cursor: pointer;
+  /* background-color: black; */
 
   &.active {
     color: #000000;
@@ -30,18 +30,25 @@ export const NavLink = styled.a`
     transition: all 0.2s ease-in-out;
     color: #000000;
   }
+
+  @media screen and (max-width: 500px) {
+    background: ${(props) => props.theme.colors.primary};
+    color: "black";
+  }
 `;
 
 export const Bars = styled(FaBars)`
   display: none;
   color: #fff;
+  /* width: 100%; */
+  /* padding-left: auto; */
 
-  @media screen and (max-width: 250px) {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 10px;
+  @media screen and (max-width: 500px) {
+    display: inline;
+    /* position: absolute; */
+    /* top: 0; */
+    /* right: 0; */
+    margin: 4px;
     font-size: 1.8rem;
     cursor: pointer;
   }
@@ -50,17 +57,12 @@ export const Bars = styled(FaBars)`
 export const NavMenu = styled.div`
   display: flex;
   align-items: center;
-  margin-right: -24px;
 
-  /* Second Nav */
-  /* margin-right: 24px; */
-
-  /* Third Nav */
-  /* width: 100vw;
-  white-space: nowrap; */
-
-  @media screen and (max-width: 250px) {
-    display: none;
+  @media screen and (max-width: 500px) {
+    /* margin-top: 240px; */
+    display: ${(props) => (props.isOpen ? "inline" : "none")};
+    animation: fadeIn 0.5s;
+    width: 50px;
   }
 `;
 

@@ -1,4 +1,4 @@
-import "../styles.css";
+import "../styles/styles.css";
 import { AppProps } from "next/app";
 import { ThemeProvider } from "styled-components";
 import React, { useState, useEffect } from "react";

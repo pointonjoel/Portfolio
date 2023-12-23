@@ -2,7 +2,6 @@ import styled from "styled-components";
 import backgroundImage from "../public/backgroundImage.png";
 import bioBackground from "../public/bioBackground.png";
 import mainRender from "../public/mainRender.png";
-import Image from "next/image";
 import css from "@styled-system/css";
 
 export const Body = styled.body(
@@ -33,6 +32,7 @@ export const Title = styled.div(
     textAlign: "centre",
     fontSize: "50px",
     lineHeight: "110%",
+    animation: "fadeIn 2.5s",
   })
 );
 
@@ -50,23 +50,6 @@ export const TitleContainer = styled.div(
     height: ["300px", "400px", "550px"],
   })
 );
-
-export const TypedText = styled.p`
-  /* overflow: hidden; */
-  /* white-space: nowrap; */
-  width: 0;
-  animation: typing 1.5s forwards;
-
-  @keyframes typing {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
-  }
-`;
-
 export const ContainerDiv = styled.div`
   display: flex;
   /* flex-direction: column; */

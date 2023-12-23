@@ -1,10 +1,3 @@
-import project1Photo from "../../public/Project_1.png";
-import project2Photo from "../../public/Project_2.png";
-import project3Photo from "../../public/Project_3.png";
-import project4Photo from "../../public/Project_4.png";
-import project5Photo from "../../public/Project_5.png";
-import project6Photo from "../../public/Project_6.png";
-
 export const TextStore = {
   home: {
     title: "Lily Pointon",
@@ -45,7 +38,7 @@ export const TextStore = {
       name: "6th Project",
       description: "My sixth ever project, probably",
       photo: "/Project_6.png",
-      homepage: true,
+      homepage: false,
     },
     7: {
       name: "7th Project",
