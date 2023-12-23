@@ -50,34 +50,44 @@ export const TitleContainer = styled.div(
     height: ["300px", "400px", "550px"],
   })
 );
-export const ContainerDiv = styled.div`
-  display: flex;
-  /* flex-direction: column; */
-  margin: auto;
-  width: 75%;
-  text-align: center;
-  flex-wrap: wrap;
-  align-content: center;
-  justify-content: center;
-`;
+
+export const ContainerDiv = styled.div(
+  css({
+    display: "flex",
+    margin: "auto",
+    width: ["90%", null, "75%"],
+    textAlign: "center",
+    flexWrap: "wrap",
+    alignContent: "center",
+    justifyContent: "center",
+    marginBottom: ["32px", null, "64px"],
+  })
+);
 
 export const Container = styled.div`
   height: 25%;
   width: 25%;
-  min-height: 200px;
-  min-width: 200px;
+  min-height: 150px;
+  min-width: 150px;
   /* max-height: 300px;
   max-width: 300px; */
   background-color: ${(props) => props.theme.colors.secondary};
   border-color: black;
   border-style: solid;
   border-width: thin;
-  margin: 20px;
+  margin: 15px;
 
   &:hover {
     transform: scale(1.05);
   }
 `;
+
+export const ImageContainer = styled.div(
+  css({
+    position: "relative",
+    height: ["200px", null, "200px"],
+  })
+);
 
 export const ProjectTitle = styled.div`
   height: 25%;

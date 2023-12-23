@@ -4,7 +4,7 @@ function Main() {
   return (
     <section>
       <Navbar />
-      <div>Yo</div>
+      <div>Yo, I'm Lil Pointon</div>
     </section>
   );
 }

@@ -16,6 +16,10 @@ export const Button = styled.button`
   &:hover {
     transition: all 0.2s ease-in-out;
     color: #000000;
+
+    background: ${(props) =>
+      props.primary ? "white" : props.theme.colors.primary};
+    color: ${(props) => (props.primary ? props.theme.colors.primary : "white")};
   }
 
   &:active {

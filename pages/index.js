@@ -8,9 +8,8 @@ import {
   Header,
   ContainerDiv,
   ProjectTitle,
-  TypedText,
+  ImageContainer,
 } from "./indexStyles";
-import mainRender from "../public/mainRender.png";
 import { TextStore } from "../components/text/TextStore";
 import Image from "next/image";
 import Link from "next/link";
@@ -31,7 +30,7 @@ const PortfolioSamples = () => {
       <ContainerDiv>
         {allProjects.map((project, index) =>
           project.homepage ? (
-            <PortfolioSection project={project} id={index} />
+            <PortfolioSection project={project} id={index} key={index} />
           ) : null
         )}
       </ContainerDiv>
@@ -41,18 +40,18 @@ const PortfolioSamples = () => {
 
 const PortfolioSection = ({ project, id }) => {
   return (
-    <Link href={`/Projects/${id}`} passHref legacyBehavior>
+    <Link href={`/Projects/${id}`} key={id} passHref legacyBehavior>
       <Container>
         <ProjectTitle>{project.name}</ProjectTitle>
-        <div style={{ height: "200px", position: "relative" }}>
+        <ImageContainer>
           <Image
             fill={true}
             objectFit={"contain"}
             src={project.photo}
-            // alt={`Cover photo for ${project.project.name}`}
+            alt={`Cover photo for ${project.name}`}
             // width={100}
           />
-        </div>
+        </ImageContainer>
       </Container>
     </Link>
   );
