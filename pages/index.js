@@ -11,7 +11,7 @@ import {
   ImageContainer,
 } from "./indexStyles";
 import { TextStore } from "../components/text/TextStore";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 
 const OpeningSection = () => {
@@ -45,11 +45,10 @@ const PortfolioSection = ({ project, id }) => {
         <ProjectTitle>{project.name}</ProjectTitle>
         <ImageContainer>
           <Image
-            fill={true}
+            layout="fill"
             objectFit={"contain"}
             src={project.photo}
             alt={`Cover photo for ${project.name}`}
-            // width={100}
           />
         </ImageContainer>
       </Container>
