@@ -26,3 +26,22 @@ export const Button = styled.button`
     transform: scale(0.92);
   }
 `;
+
+export const PDFContainer = styled.div(
+  css({
+    display: "flex",
+    margin: "0 auto",
+    width: ["90%", null, "70%"],
+    height: ["300px", "400px", "550px"],
+  })
+);
+
+export const Container = styled.div(
+  css({
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    textAlign: "centre",
+    margin: "0 auto",
+  })
+);

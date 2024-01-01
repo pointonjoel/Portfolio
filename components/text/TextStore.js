@@ -12,7 +12,7 @@ export const TextStore = {
       homepage: true,
     },
     2: {
-      name: "2nd Project",
+      name: "Cable Wrap",
       description: "My second ever project, really",
       photo: "/Project_2.png",
       download: "pdf",

@@ -65,12 +65,12 @@ export const ContainerDiv = styled.div(
 );
 
 export const Container = styled.div`
-  height: 25%;
   width: 25%;
-  min-height: 150px;
-  min-width: 150px;
-  /* max-height: 300px;
-  max-width: 300px; */
+  height: 25%;
+  max-height: 300px;
+  max-width: 300px;
+  min-height: 100px;
+  min-width: 100px;
   background-color: ${(props) => props.theme.colors.secondary};
   border-color: black;
   border-style: solid;
@@ -84,8 +84,9 @@ export const Container = styled.div`
 
 export const ImageContainer = styled.div(
   css({
-    position: "relative",
-    height: ["200px", null, "200px"],
+    // position: "relative",
+    // height: ["100px", null, "170px"],
+    // width: ["100px", null, "260px"],
   })
 );
 

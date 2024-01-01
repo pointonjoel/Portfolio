@@ -1,7 +1,8 @@
 import Navbar from "../../../components/navbar/Navbar";
 import { useRouter } from "next/router";
 import { TextStore } from "../../../components/text/TextStore";
-import { Button } from "./ProjectStyles";
+import { Button, PDFContainer, Container } from "./ProjectStyles";
+import { Document, Page } from "react-pdf";
 
 // To enable page reload with the slug
 export async function getStaticProps() {
@@ -37,16 +38,30 @@ const Project = ({ repo }) => {
   const PageContent = (
     <>
       <Navbar />
-      <div>Enjoy my {project.name}!</div>
-      <div>{project.description}!</div>
-      <div>
+      <Container>
+        <div>Enjoy my {project.name}!</div>
+        <div>{project.description}!</div>
         <a
           href={`/Project_${projectNum}.${project.download}`}
           download={`${project.name} Project`}
         >
           <Button>Download PDF</Button>
         </a>
-      </div>
+      </Container>
+      <PDFContainer>
+        <object
+          data="/Project_2.pdf"
+          type="application/pdf"
+          width="100%"
+          height="100%"
+        >
+          <p>
+            Your web browser doesn't have a PDF plugin. Instead you can{" "}
+            <a href="/Project_2.pdf">click here</a> to download the PDF file.
+          </p>
+        </object>
+      </PDFContainer>
+      Some text
     </>
   );
   return validProject ? PageContent : ErrorContent;

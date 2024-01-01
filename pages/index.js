@@ -45,8 +45,12 @@ const PortfolioSection = ({ project, id }) => {
         <ProjectTitle>{project.name}</ProjectTitle>
         <ImageContainer>
           <Image
-            layout="fill"
-            objectFit={"contain"}
+            // layout="fill"
+            // objectFit={"contain"}
+            // layout={"fill"}
+            // objectFit={"contain"}
+            height={210}
+            width={310}
             src={project.photo}
             alt={`Cover photo for ${project.name}`}
           />
