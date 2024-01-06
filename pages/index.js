@@ -1,4 +1,3 @@
-import Navbar from "../components/navbar/Navbar";
 import {
   Body,
   Title,
@@ -9,7 +8,7 @@ import {
   ContainerDiv,
   ProjectTitle,
   ImageContainer,
-} from "./indexStyles";
+} from "../styles/homeStyles";
 import { TextStore } from "../components/text/TextStore";
 import Image from "next/legacy/image";
 import Link from "next/link";
@@ -63,7 +62,6 @@ const PortfolioSection = ({ project, id }) => {
 function Main() {
   return (
     <section>
-      <Navbar />
       <Body>
         <OpeningSection />
         <Bio>{TextStore.home.bio}</Bio>

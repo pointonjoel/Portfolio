@@ -1,7 +1,6 @@
-import Navbar from "../../../components/navbar/Navbar";
 import { useRouter } from "next/router";
 import { TextStore } from "../../../components/text/TextStore";
-import { Button, PDFContainer, Container } from "./ProjectStyles";
+import { Button, PDFContainer, Container } from "../../../styles/projectStyles";
 import { Document, Page } from "react-pdf";
 
 // To enable page reload with the slug
@@ -29,7 +28,6 @@ const Project = ({ repo }) => {
 
   const ErrorContent = (
     <>
-      <Navbar />
       <div>
         Project {projectID} does not exist, please select a valid project ID!
       </div>
@@ -37,7 +35,6 @@ const Project = ({ repo }) => {
   );
   const PageContent = (
     <>
-      <Navbar />
       <Container>
         <div>Enjoy my {project.name}!</div>
         <div>{project.description}!</div>

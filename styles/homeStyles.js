@@ -60,7 +60,7 @@ export const ContainerDiv = styled.div(
     flexWrap: "wrap",
     alignContent: "center",
     justifyContent: "center",
-    marginBottom: ["32px", null, "64px"],
+    paddingBottom: ["32px", null, "64px"],
   })
 );
 

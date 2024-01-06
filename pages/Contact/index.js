@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import Navbar from "../../components/navbar/Navbar";
 import { useForm } from "react-hook-form";
 
 const Contact = () => {
@@ -37,23 +36,31 @@ const Contact = () => {
     }
   }
 
-  // const {
-  //   register,
-  //   handleSubmit,
-  //   watch,
-  //   formState: { errors },
-  // } = useForm();
-  // const onSubmit = (data) => console.log(data);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => console.log(data);
 
   return (
     <>
-      <form ref={form} onSubmit={sendEmail}>
+      <form ref={form} onSubmit={handleSubmit(onSubmit)}>
         <label>Name</label>
-        <input type="text" name="from_name" />
+        <input
+          type="text"
+          name="from_name"
+          {...register("name", { required: true })}
+        />
         <label>Email</label>
-        <input type="email" name="from_email" />
+        <input
+          type="email"
+          name="from_email"
+          {...register("email", { required: true })}
+        />
         <label>Message</label>
-        <textarea name="message" />
+        <textarea name="message" {...register("message", { required: true })} />
+        {errors.name && <span>This field is required</span>}
         <input type="submit" value="Send" />
       </form>
       <p>{successMsg}</p>
@@ -61,13 +68,4 @@ const Contact = () => {
   );
 };
 
-function Main() {
-  return (
-    <section>
-      <Navbar />
-      <Contact />
-    </section>
-  );
-}
-
-export default Main;
+export default Contact;
