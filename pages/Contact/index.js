@@ -1,8 +1,9 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import Navbar from "../../components/navbar/Navbar";
+import { useForm } from "react-hook-form";
 
-const ContactUs = () => {
+const Contact = () => {
   const form = useRef();
   const [status, setStatus] = useState(undefined);
 
@@ -36,6 +37,14 @@ const ContactUs = () => {
     }
   }
 
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   watch,
+  //   formState: { errors },
+  // } = useForm();
+  // const onSubmit = (data) => console.log(data);
+
   return (
     <>
       <form ref={form} onSubmit={sendEmail}>
@@ -56,8 +65,7 @@ function Main() {
   return (
     <section>
       <Navbar />
-      <div>Yo, I'm Lil Pointon</div>
-      <ContactUs />
+      <Contact />
     </section>
   );
 }
