@@ -82,14 +82,6 @@ export const Container = styled.div`
   }
 `;
 
-export const ImageContainer = styled.div(
-  css({
-    // position: "relative",
-    // height: ["100px", null, "170px"],
-    // width: ["100px", null, "260px"],
-  })
-);
-
 export const ProjectTitle = styled.div`
   height: 25%;
   width: 100%;

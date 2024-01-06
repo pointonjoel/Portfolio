@@ -2,12 +2,11 @@ import {
   Body,
   Title,
   TitleContainer,
+  ContainerDiv,
   Container,
+  ProjectTitle,
   Bio,
   Header,
-  ContainerDiv,
-  ProjectTitle,
-  ImageContainer,
 } from "../styles/homeStyles";
 import { TextStore } from "../components/text/TextStore";
 import Image from "next/legacy/image";
@@ -42,18 +41,16 @@ const PortfolioSection = ({ project, id }) => {
     <Link href={`/Projects/${id}`} key={id} passHref legacyBehavior>
       <Container>
         <ProjectTitle>{project.name}</ProjectTitle>
-        <ImageContainer>
-          <Image
-            // layout="fill"
-            // objectFit={"contain"}
-            // layout={"fill"}
-            // objectFit={"contain"}
-            height={210}
-            width={310}
-            src={project.photo}
-            alt={`Cover photo for ${project.name}`}
-          />
-        </ImageContainer>
+        <Image
+          // layout="fill"
+          // objectFit={"contain"}
+          // layout={"fill"}
+          // objectFit={"contain"}
+          height={210}
+          width={310}
+          src={project.photo}
+          alt={`Cover photo for ${project.name}`}
+        />
       </Container>
     </Link>
   );
