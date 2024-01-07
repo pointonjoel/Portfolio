@@ -1,9 +1,15 @@
-function Main() {
-  return (
-    <section>
-      <div>Yo, I'm Lil Pointon</div>
-    </section>
-  );
-}
+import React from "react";
+import { Container } from "../../styles/aboutStyles";
+import { Title } from "../../styles/commonStyles";
 
-export default Main;
+const Contact = () => {
+  return (
+    <>
+      <Title>About</Title>
+
+      <Container>Hey</Container>
+    </>
+  );
+};
+
+export default Contact;

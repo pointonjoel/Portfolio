@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { TextStore } from "../../../components/text/TextStore";
-import { Button, PDFContainer, Container } from "../../../styles/projectStyles";
-import { Document, Page } from "react-pdf";
+import { PDFContainer, Container } from "../../../styles/projectStyles";
+import { Button } from "../../../styles/commonStyles";
 
 // To enable page reload with the slug
 export async function getStaticProps() {

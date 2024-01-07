@@ -3,6 +3,10 @@ export const TextStore = {
     title: "Lily Pointon",
     bio: "Hi there - I'm Lily! I'm a third year product design and manufacture student at The University of Nottingham. I would love to share some of my work with you, so please have an explore of my projects below and don't hesitate to get in contact if you like what you see. Thanks for visiting my website!",
   },
+  contact: {
+    message:
+      "I would love to hear from you - please get in touch using the form below!",
+  },
   projects: {
     1: {
       name: "1st Project",
