@@ -13,11 +13,11 @@ export const PDFContainer = styled.div(
 
 export const Container = styled.div(
   css({
-    display: "block",
+    display: "flex",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "centre",
-    margin: "0 auto",
+    marginBottom: "60px",
   })
 );
 
@@ -30,7 +30,7 @@ export const TitleContainer = styled.div(
     backgroundSize: "contain",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center right",
-    backgroundSize: ["28% auto", "32% auto", "29% auto"],
+    backgroundSize: ["25% auto", "32% auto", "29% auto"],
     height: ["300px", "400px", "500px"],
     // margin: "auto",
   })
@@ -50,5 +50,12 @@ export const Title = styled.div(
     justifyContent: "center",
     alignItems: "center",
     fontSize: ["25px", "35px", "45px", "50px"],
+  })
+);
+
+export const Description = styled.div(
+  css({
+    fontFamily: "London, sans-serif",
+    fontSize: ["17px", "20px", "25px"],
   })
 );

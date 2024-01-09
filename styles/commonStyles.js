@@ -10,7 +10,7 @@ export const Button = styled.button`
   font-size: 17px;
   font-weight: bold;
   padding: 1px 10px;
-  border-radius: 3px;
+  border-radius: 5px;
 
   &:hover {
     transition: all 0.2s ease-in-out;

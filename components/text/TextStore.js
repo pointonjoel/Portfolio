@@ -14,7 +14,8 @@ export const TextStore = {
   projects: {
     1: {
       name: "Sustainable Lamp",
-      description: "My first ever project",
+      description:
+        "This was a fancy project that I did on my own to build a super sexy lamp - I hope you like it! It took lots of time and some pretty renders can be found in the PDF.",
       photo: "png",
       download: "pdf",
       homepage: true,
@@ -27,7 +28,7 @@ export const TextStore = {
       homepage: true,
     },
     3: {
-      name: "3rd Project with a really, realllllllllly long title",
+      name: "3rd Project",
       description: "My third ever project, honest",
       photo: "png",
       download: "pptx",

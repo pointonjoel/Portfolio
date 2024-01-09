@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import { TextStore } from "../../../components/text/TextStore";
 import {
   Container,
+  Description,
   Title,
   TitleContainer,
 } from "../../../styles/projectStyles";
@@ -87,21 +88,11 @@ const Project = ({ repo }) => {
         >
           <Button>Download PDF</Button>
         </a>
-        <FilledContainer>{project.description}</FilledContainer>
       </Container>
-      {/* <PDFContainer>
-        <object
-          data="/Project_2.pdf"
-          type="application/pdf"
-          width="100%"
-          height="100%"
-        >
-          <p>
-            Your web browser doesn't have a PDF plugin. Instead you can{" "}
-            <a href="/Project_2.pdf">click here</a> to download the PDF file.
-          </p>
-        </object>
-      </PDFContainer> */}
+
+      <FilledContainer style={{ marginBottom: "80px" }}>
+        <Description>{project.description}</Description>
+      </FilledContainer>
     </>
   );
   return validProject ? PageContent : ErrorContent;
