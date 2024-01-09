@@ -1,7 +1,32 @@
 import { useRouter } from "next/router";
 import { TextStore } from "../../../components/text/TextStore";
-import { PDFContainer, Container } from "../../../styles/projectStyles";
-import { Button } from "../../../styles/commonStyles";
+import {
+  Container,
+  Title,
+  TitleContainer,
+} from "../../../styles/projectStyles";
+import { Button, FilledContainer } from "../../../styles/commonStyles";
+import render1 from "../../../public/Projects/Project 1/render.png";
+import render2 from "../../../public/Projects/Project 2/render.png";
+import render3 from "../../../public/Projects/Project 3/render.png";
+import render4 from "../../../public/Projects/Project 4/render.png";
+import render5 from "../../../public/Projects/Project 5/render.png";
+// import render6 from "../../../public/Projects/Project 6/render.png";
+// import render7 from "../../../public/Projects/Project 6/render.png";
+
+// import dynamic from "next/dynamic";
+
+// const DynamicHeader = dynamic(
+//   () => {
+//     const router = useRouter();
+//     const projectID = router.query.projectID;
+//     const projectNum = Number(projectID) + 1;
+//     import("../../../public/Projects/Project 1/render.png");
+//   },
+//   {
+//     loading: () => <p>Loading...</p>,
+//   }
+// );
 
 // To enable page reload with the slug
 export async function getStaticProps() {
@@ -25,7 +50,20 @@ const Project = ({ repo }) => {
   const allProjectNames = Object.keys(allProjects);
   const validProject = allProjectNames.includes(projectID);
   const project = allProjects[projectID];
-
+  let render = render1;
+  if (projectNum === 1) {
+    render = render1;
+  } else if (projectNum === 2) {
+    render = render2;
+  } else if (projectNum === 3) {
+    render = render3;
+  } else if (projectNum === 4) {
+    render = render4;
+  } else if (projectNum === 5) {
+    render = render5;
+  } else {
+    render = "";
+  }
   const ErrorContent = (
     <>
       <div>
@@ -35,17 +73,23 @@ const Project = ({ repo }) => {
   );
   const PageContent = (
     <>
+      <TitleContainer
+        style={{
+          backgroundImage: `url(${render.src})`,
+        }}
+      >
+        <Title>{project.name}</Title>
+      </TitleContainer>
       <Container>
-        <div>Enjoy my {project.name}!</div>
-        <div>{project.description}!</div>
         <a
-          href={`/Project_${projectNum}.${project.download}`}
+          href={`/Projects/Project ${projectNum}/download.${project.download}`}
           download={`${project.name} Project`}
         >
           <Button>Download PDF</Button>
         </a>
+        <FilledContainer>{project.description}</FilledContainer>
       </Container>
-      <PDFContainer>
+      {/* <PDFContainer>
         <object
           data="/Project_2.pdf"
           type="application/pdf"
@@ -57,8 +101,7 @@ const Project = ({ repo }) => {
             <a href="/Project_2.pdf">click here</a> to download the PDF file.
           </p>
         </object>
-      </PDFContainer>
-      Some text
+      </PDFContainer> */}
     </>
   );
   return validProject ? PageContent : ErrorContent;

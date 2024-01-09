@@ -97,6 +97,6 @@ export const NavBtnLink = styled.a`
   &:hover {
     transition: all 0.2s ease-in-out;
     background: #000000;
-    color: #ffffff;
+    color: ${(props) => props.theme.colors.secondary};
   }
 `;

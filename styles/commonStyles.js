@@ -40,3 +40,15 @@ export const Title = styled.div(
     fontSize: "50px",
   })
 );
+
+export const FilledContainer = styled.div`
+  display: flex;
+  /* border: 2px solid ${(props) => props.theme.colors.primary}; */
+  background-color: ${(props) => props.theme.colors.primary};
+  border-radius: 20px;
+  padding: 15px;
+  margin: auto;
+  text-align: center;
+  width: 65%;
+  max-width: 700px;
+`;

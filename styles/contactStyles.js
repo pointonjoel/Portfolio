@@ -12,7 +12,7 @@ export const Container = styled.div(
     // alignItems: "center",
     // textAlign: "centre",
     fontSize: "20px",
-    margin: "auto",
+    margin: "0px auto 50px",
   })
 );
 
@@ -20,7 +20,7 @@ export const FormContainer = styled.div`
   display: flex;
   border: 2px solid ${(props) => props.theme.colors.primary};
   border-radius: 20px;
-  padding: 30px 15% 20px;
+  padding: 3% 5% 5px;
   margin-top: 15px;
   /* align-items: centre; */
   /* height: 500px; */
@@ -30,10 +30,11 @@ export const FormRow = styled.div(
   css({
     display: "flex",
     // marginBottom: "10px",
-    flex: 1,
-    width: ["200px", "350px", "500px", "600px"],
+    // flex: 1,
+    width: ["220px", "350px", "500px", "600px"],
     alignItems: "center",
     marginBottom: "5px",
+    // marginLeft: "20%",
   })
 );
 

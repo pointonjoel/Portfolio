@@ -94,8 +94,9 @@ const Contact = () => {
         <FormContainer>
           <form ref={form} onSubmit={handleSubmit(sendEmail)}>
             <FormRow>
-              <label>Name:</label>
+              <label for="name">Name:</label>
               <Input
+                id="name"
                 type="text"
                 name="name"
                 {...register("name", {
@@ -109,8 +110,9 @@ const Contact = () => {
               <HelperText role="alert">{nameError}</HelperText>
             </FormRow>
             <FormRow>
-              <label>Email:</label>
+              <label for="reply_to">Email:</label>
               <Input
+                id="reply_to"
                 type="text"
                 name="reply_to"
                 {...register("email", {
@@ -123,8 +125,9 @@ const Contact = () => {
               <HelperText role="alert">{emailError}</HelperText>
             </FormRow>
             <FormRow style={{ alignItems: "none" }}>
-              <label>Message:</label>
+              <label for="message">Message:</label>
               <TextArea
+                id="message"
                 name="message"
                 {...register("message", { required: true })}
               />

@@ -8,9 +8,12 @@ import {
   Bio,
   Header,
 } from "../styles/homeStyles";
+import { FilledContainer } from "../styles/commonStyles";
 import { TextStore } from "../components/text/TextStore";
 import Image from "next/legacy/image";
 import Link from "next/link";
+
+// import { useEffect } from "react";
 
 const OpeningSection = () => {
   return (
@@ -24,7 +27,7 @@ const PortfolioSamples = () => {
   const allProjects = Object.values(TextStore.projects);
   return (
     <>
-      <Header>Projects</Header>
+      <Header id="projects">Projects</Header>
       <ContainerDiv>
         {allProjects.map((project, index) =>
           project.homepage ? (
@@ -48,7 +51,8 @@ const PortfolioSection = ({ project, id }) => {
           // objectFit={"contain"}
           height={210}
           width={310}
-          src={project.photo}
+          // src={project.photo}
+          src={`/Projects/Project ${id + 1}/main.png`}
           alt={`Cover photo for ${project.name}`}
         />
       </Container>
@@ -61,7 +65,9 @@ function Main() {
     <section>
       <Body>
         <OpeningSection />
-        <Bio>{TextStore.home.bio}</Bio>
+        <FilledContainer>
+          <Bio>{TextStore.home.bio}</Bio>
+        </FilledContainer>
         <PortfolioSamples />
       </Body>
     </section>
