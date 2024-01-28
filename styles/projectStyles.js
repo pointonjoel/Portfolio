@@ -59,3 +59,27 @@ export const Description = styled.div(
     fontSize: ["17px", "20px", "25px"],
   })
 );
+
+export const ScrollContainer = styled.div`
+  display: flex;
+  width: 100%;
+  text-align: center;
+  /* justify-content: center; */
+  overflow: auto;
+`;
+
+export const ProjectsContainer = styled.div`
+  padding: 20px;
+  display: block;
+  width: 100%;
+
+  background-color: ${(props) => props.theme.colors.tertiary};
+`;
+
+export const ProjectsHeading = styled.div(
+  css({
+    padding: "10px",
+    textAlign: "center",
+    fontSize: ["17px", "20px", "25px"],
+  })
+);

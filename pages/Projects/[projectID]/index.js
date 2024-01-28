@@ -3,15 +3,20 @@ import { TextStore } from "../../../components/text/TextStore";
 import {
   Container,
   Description,
+  ProjectsContainer,
+  ProjectsHeading,
   Title,
   TitleContainer,
+  ScrollContainer,
 } from "../../../styles/projectStyles";
 import { Button, FilledContainer } from "../../../styles/commonStyles";
+import PortfolioSection from "../../../components/portfolioSection/portfolioSection";
 import render1 from "../../../public/Projects/Project 1/render.png";
 import render2 from "../../../public/Projects/Project 2/render.png";
 import render3 from "../../../public/Projects/Project 3/render.png";
 import render4 from "../../../public/Projects/Project 4/render.png";
 import render5 from "../../../public/Projects/Project 5/render.png";
+import { PortfolioSamples } from "../..";
 // import render6 from "../../../public/Projects/Project 6/render.png";
 // import render7 from "../../../public/Projects/Project 6/render.png";
 
@@ -93,6 +98,17 @@ const Project = ({ repo }) => {
       <FilledContainer style={{ marginBottom: "80px" }}>
         <Description>{project.description}</Description>
       </FilledContainer>
+
+      <ProjectsContainer>
+        <ProjectsHeading>Other Projects</ProjectsHeading>
+        <ScrollContainer>
+          {allProjects.map((project, index) =>
+            project.homepage && index != projectID ? (
+              <PortfolioSection project={project} id={index} key={index} />
+            ) : null
+          )}
+        </ScrollContainer>
+      </ProjectsContainer>
     </>
   );
   return validProject ? PageContent : ErrorContent;
