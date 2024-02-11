@@ -115,7 +115,7 @@ const Contact = () => {
                 id="reply_to"
                 type="text"
                 name="reply_to"
-                {...register("email", {
+                {...register("reply_to", {
                   required: true,
                   pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
                 })}
