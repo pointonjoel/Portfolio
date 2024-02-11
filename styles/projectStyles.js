@@ -60,13 +60,15 @@ export const Description = styled.div(
   })
 );
 
-export const ScrollContainer = styled.div`
-  display: flex;
-  width: 100%;
-  text-align: center;
-  /* justify-content: center; */
-  overflow: auto;
-`;
+export const ScrollContainer = styled.div(
+  css({
+    display: "flex",
+    width: "100%",
+    textAlign: "center",
+    justifyContent: [null, null, "center"],
+    overflow: "auto",
+  })
+);
 
 export const ProjectsContainer = styled.div`
   padding: 20px;

@@ -22,6 +22,7 @@ export const FormContainer = styled.div`
   border-radius: 20px;
   padding: 3% 5% 5px;
   margin-top: 15px;
+  /* width: "100%"; */
   /* align-items: centre; */
   /* height: 500px; */
 `;
@@ -31,7 +32,7 @@ export const FormRow = styled.div(
     display: "flex",
     // marginBottom: "10px",
     // flex: 1,
-    width: ["220px", "350px", "500px", "600px"],
+    width: ["100%", "350px", "500px", "600px"],
     alignItems: "center",
     marginBottom: "5px",
     // marginLeft: "20%",
