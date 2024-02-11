@@ -19,7 +19,7 @@ const Contact = () => {
             style={{ borderRadius: "50%" }}
             height={250}
             width={250}
-            src={"/Profile.jpg"}
+            src={"/Profile.png"}
             alt={`Profile of Lily Pointon`}
             // objectFit="cover"
             // objectPosition="center"
