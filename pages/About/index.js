@@ -12,20 +12,13 @@ const Contact = () => {
       <Container>
         <p style={{ width: "80%" }}>{TextStore.about.message}</p>
         <ImageContainer>
-          {/* <div style={{ }}> */}
           <Image
-            // layout="fill"
-            // objectFit={"contain"}
             style={{ borderRadius: "50%" }}
             height={250}
             width={250}
             src={"/profile.png"}
             alt={`Profile of Lily Pointon`}
-            // objectFit="cover"
-            // objectPosition="center"
-            // style={{ float: "right" }}
           />
-          {/* </div> */}
         </ImageContainer>
       </Container>
     </>

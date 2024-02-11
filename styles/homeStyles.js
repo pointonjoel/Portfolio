@@ -54,7 +54,7 @@ export const ContainerDiv = styled.div(
   css({
     display: "flex",
     margin: "auto",
-    width: ["90%", null, "75%"],
+    width: ["90%", null, "70%"],
     textAlign: "center",
     flexWrap: "wrap",
     alignContent: "center",
@@ -65,24 +65,21 @@ export const ContainerDiv = styled.div(
 
 export const Container = styled.div`
   width: 25%;
-  height: 25%;
-  max-height: 300px;
-  max-width: 300px;
-  min-height: 100px;
+  max-width: 250px;
   min-width: 100px;
   background-color: ${(props) => props.theme.colors.secondary};
   border-color: black;
   border-style: solid;
   border-width: thin;
   margin: 15px;
+  object-fit: contain;
 
   &:hover {
     transform: scale(1.05);
   }
 `;
 
-export const ProjectTitle = styled.div`
-  height: 25%;
+export const ProjectTitle = styled.p`
   width: 100%;
   background-color: ${(props) => props.theme.colors.primary};
   vertical-align: middle;
