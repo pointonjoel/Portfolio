@@ -31,9 +31,6 @@ const Navbar = () => {
           <CustomLink to="/#projects" name="Projects" scroll={false} />
         </NavMenu>
         <Bars onClick={toggleHamburger} />
-        {/* <NavBtn>
-          <NavBtnLink to="/signin">Sign In</NavBtnLink>
-        </NavBtn> */}
       </Nav>
     </>
   );
