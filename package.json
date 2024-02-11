@@ -15,7 +15,7 @@
     "react-icons": "^4.11.0",
     "react-pdf": "^7.6.0",
     "react-spinners": "^0.13.8",
-    "sharp": "^0.33.1",
+    "sharp": "^0.33.2",
     "styled-components": "^6.1.0",
     "styled-system": "^5.1.5"
   },
