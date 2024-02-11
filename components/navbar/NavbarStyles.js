@@ -1,14 +1,23 @@
 import { FaBars } from "react-icons/fa";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { ImCross } from "react-icons/im";
+import { IoCloseSharp } from "react-icons/io5";
+
+import css from "@styled-system/css";
+
 // import themes from "../../styles/THEMES";
 import styled from "styled-components";
 
 export const Nav = styled.nav`
   background: ${(props) => props.theme.colors.primary};
-  min-height: 50px;
+  height: 50px;
   display: flex;
   justify-content: right;
-  padding: 0.5rem 2vw;
-  /* z-index: 10; */
+  /* padding: 0.5rem 2vw; */
+  /* margin:  */
+
+  padding: ${(props) => (props.isOpen ? "0px" : "0.5rem 2vw")};
 `;
 
 export const NavLink = styled.a`
@@ -16,11 +25,10 @@ export const NavLink = styled.a`
   display: flex;
   align-items: center;
   text-decoration: none;
-  padding: 0 1rem;
   height: 30px;
   font-weight: bold;
   cursor: pointer;
-  /* background-color: black; */
+  padding: ${(props) => props.hamburger && "4% 5%"};
 
   &.active {
     color: #000000;
@@ -37,18 +45,30 @@ export const NavLink = styled.a`
   }
 `;
 
-export const Bars = styled(FaBars)`
+export const Hamburger = styled(GiHamburgerMenu)`
   display: none;
   color: #fff;
-  /* width: 100%; */
-  /* padding-left: auto; */
+  z-index: 1;
+  animation: fadeIn 0.5s;
 
   @media screen and (max-width: 500px) {
     display: inline;
-    /* position: absolute; */
-    /* top: 0; */
-    /* right: 0; */
     margin: 4px;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+`;
+
+export const Cross = styled(IoCloseSharp)`
+  display: none;
+  color: #fff;
+  margin: 0.5rem 2vw 0px 0px;
+  z-index: 1;
+  animation: fadeIn 0.5s;
+
+  @media screen and (max-width: 500px) {
+    display: inline;
+    /* margin: 4px; */
     font-size: 1.8rem;
     cursor: pointer;
   }
@@ -57,12 +77,22 @@ export const Bars = styled(FaBars)`
 export const NavMenu = styled.div`
   display: flex;
   align-items: center;
+  width: 100%;
 
   @media screen and (max-width: 500px) {
-    /* margin-top: 240px; */
-    display: ${(props) => (props.isOpen ? "inline" : "none")};
+    display: ${(props) => (props.isOpen ? "block" : "none")};
+    position: ${(props) => (props.isOpen ? "fixed" : "none")};
+
     animation: fadeIn 0.5s;
-    width: 50px;
+  }
+`;
+
+export const SideNav = styled.div`
+  @media screen and (max-width: 500px) {
+    display: block;
+    position: fixed;
+    width: 100%;
+    animation: fadeIn 0.5s;
   }
 `;
 
@@ -70,10 +100,6 @@ export const NavBtn = styled.nav`
   display: flex;
   align-items: center;
   margin-right: 24px;
-
-  /* Third Nav */
-  /* justify-content: flex-end;
-  width: 100vw; */
 
   @media screen and (max-width: 768px) {
     display: none;

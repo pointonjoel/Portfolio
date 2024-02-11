@@ -9,7 +9,10 @@ export const TextStore = {
   },
   about: {
     message:
-      "Hey there, I'm Lily! I'm a third year product design and manufacture student at The University of Nottingham. I would love to share some of my work with you, so please have an explore of my projects below and don't hesitate to get in contact if you like what you see. Thanks for visiting my website!",
+      "Hey there, I'm Lily! I'm a third year product design and manufacture student from Canterbury currently studying at The University of Nottingham. I am 21 and married, living in Nottingham while I study for my degree. I love cycling, music and crocheting and I am heavily involved in voluntary work at our local church working with the youth of our city. I also love films, cooking and I play guitar and sing - I sometimes perform at events with my husband which is super fun. \
+      \
+      I have a passion for good design and want to use what I have learnt to make a difference in the world by bringing innovation to help solve important problems. As a Christian, I care deeply about those who are suffering due to a lack of good design, whether that be those with disabilities or those in developing countries, and one day would love to be able to use my degree to help. \
+I would love to share some of my work with you, so please feel free to explore my projects below and don't hesitate to get in contact if you like what you see. Thanks for visiting my website!",
   },
   projects: {
     1: {
@@ -45,7 +48,7 @@ export const TextStore = {
       homepage: true,
     },
     5: {
-      name: "Gril Portable BBQ",
+      name: "Portable BBQ",
       description:
         "This was the first full project I completed while at university. It was an 11 week individual project where we were asked to design a portable BBQ that fit the aesthetic and marketing of a made-up company 'Gril'. It was my first experience using Solidworks for a creative project that I had designed and my first time rendering on a project. Please find a downloadable pdf of the portfolio of this project below.",
       photo: "png",

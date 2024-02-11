@@ -1,13 +1,23 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import { Nav, NavLink, Bars, NavMenu } from "./NavbarStyles";
+import {
+  Nav,
+  NavLink,
+  SideNav,
+  NavMenu,
+  Hamburger,
+  Cross,
+} from "./NavbarStyles";
 import { useRouter } from "next/router";
 
-const CustomLink = ({ to, name, scroll }) => {
+const CustomLink = ({ to, name, scroll, hamburger }) => {
   const router = useRouter();
   return (
     <Link href={to} passHref legacyBehavior scroll={scroll}>
-      <NavLink className={router.pathname == to ? "active" : ""}>
+      <NavLink
+        className={router.pathname == to ? "active" : ""}
+        hamburger={hamburger}
+      >
         {name}
       </NavLink>
     </Link>
@@ -23,14 +33,38 @@ const Navbar = () => {
 
   return (
     <>
-      <Nav>
+      <Nav isOpen={hamburgerOpen}>
         <NavMenu isOpen={hamburgerOpen}>
-          <CustomLink to="/" name="Home" activeStyle />
-          <CustomLink to="/About" name="About" activeStyle />
-          <CustomLink to="/Contact" name="Contact" activeStyle />
-          <CustomLink to="/#projects" name="Projects" scroll={false} />
+          <CustomLink
+            to="/"
+            name="Home"
+            activeStyle
+            hamburger={hamburgerOpen}
+          />
+          <CustomLink
+            to="/About"
+            name="About"
+            activeStyle
+            hamburger={hamburgerOpen}
+          />
+          <CustomLink
+            to="/Contact"
+            name="Contact"
+            activeStyle
+            hamburger={hamburgerOpen}
+          />
+          <CustomLink
+            to="/#projects"
+            name="Projects"
+            scroll={false}
+            hamburger={hamburgerOpen}
+          />
         </NavMenu>
-        <Bars onClick={toggleHamburger} />
+        {hamburgerOpen ? (
+          <Cross onClick={toggleHamburger} strokeWidth={"30px"} />
+        ) : (
+          <Hamburger onClick={toggleHamburger} />
+        )}
       </Nav>
     </>
   );
