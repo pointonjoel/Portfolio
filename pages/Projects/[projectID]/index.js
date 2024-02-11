@@ -16,23 +16,6 @@ import render2 from "../../../public/Projects/Project 2/render.png";
 import render3 from "../../../public/Projects/Project 3/render.png";
 import render4 from "../../../public/Projects/Project 4/render.png";
 import render5 from "../../../public/Projects/Project 5/render.png";
-import { PortfolioSamples } from "../..";
-// import render6 from "../../../public/Projects/Project 6/render.png";
-// import render7 from "../../../public/Projects/Project 6/render.png";
-
-// import dynamic from "next/dynamic";
-
-// const DynamicHeader = dynamic(
-//   () => {
-//     const router = useRouter();
-//     const projectID = router.query.projectID;
-//     const projectNum = Number(projectID) + 1;
-//     import("../../../public/Projects/Project 1/render.png");
-//   },
-//   {
-//     loading: () => <p>Loading...</p>,
-//   }
-// );
 
 // To enable page reload with the slug
 export async function getStaticProps() {

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import css from "@styled-system/css";
-// import mainRender from "../public/mainRender.png";
 
 export const PDFContainer = styled.div(
   css({
@@ -26,13 +25,11 @@ export const TitleContainer = styled.div(
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    // backgroundImage: [null, `url(${mainRender.src})`],
     backgroundSize: "contain",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center right",
     backgroundSize: ["25% auto", "32% auto", "29% auto"],
     height: ["300px", "400px", "500px"],
-    // margin: "auto",
   })
 );
 

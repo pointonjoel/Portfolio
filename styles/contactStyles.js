@@ -9,8 +9,6 @@ export const Container = styled.div(
     width: ["90%", "75%", "60%"],
     minWidth: "200px",
     justifyContent: "center",
-    // alignItems: "center",
-    // textAlign: "centre",
     fontSize: "20px",
     margin: "0px auto 50px",
   })
@@ -22,26 +20,19 @@ export const FormContainer = styled.div`
   border-radius: 20px;
   padding: 3% 5% 5px;
   margin-top: 15px;
-  /* width: "100%"; */
-  /* align-items: centre; */
-  /* height: 500px; */
 `;
 
 export const FormRow = styled.div(
   css({
     display: "flex",
-    // marginBottom: "10px",
-    // flex: 1,
     width: ["100%", "350px", "500px", "600px"],
     alignItems: "center",
     marginBottom: "5px",
-    // marginLeft: "20%",
   })
 );
 
 export const HelperText = styled.p(
   css({
-    // padding: ["1px", null, "2px"],
     color: "red",
     fontStyle: "italic",
     fontSize: "17px",

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import backgroundImage from "../public/backgroundImage.png";
-// import bioBackground from "../public/bioBackground.png";
 import mainRender from "../public/mainRender.png";
 import css from "@styled-system/css";
 
@@ -17,7 +16,6 @@ export const Body = styled.body(
 
 export const Title = styled.div(
   css({
-    // width: "550px",
     height: ["80px", "100px", "150px"],
     px: "10px",
     width: ["60%", null, "40%"],
@@ -46,7 +44,6 @@ export const TitleContainer = styled.div(
     backgroundPosition: "center right",
     backgroundSize: ["28% auto", "32% auto", "30% auto"],
     height: ["300px", "400px", "550px"],
-    // margin: "auto",
   })
 );
 

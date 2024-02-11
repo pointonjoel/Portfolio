@@ -1,12 +1,8 @@
-import { FaBars } from "react-icons/fa";
-import { RxHamburgerMenu } from "react-icons/rx";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { ImCross } from "react-icons/im";
 import { IoCloseSharp } from "react-icons/io5";
 
 import css from "@styled-system/css";
 
-// import themes from "../../styles/THEMES";
 import styled from "styled-components";
 
 export const Nav = styled.nav`
@@ -14,9 +10,6 @@ export const Nav = styled.nav`
   height: 50px;
   display: flex;
   justify-content: right;
-  /* padding: 0.5rem 2vw; */
-  /* margin:  */
-
   padding: ${(props) => (props.isOpen ? "0px" : "0.5rem 2vw")};
 `;
 
