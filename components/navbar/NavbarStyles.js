@@ -9,6 +9,7 @@ export const Nav = styled.nav`
   background: ${(props) => props.theme.colors.primary};
   height: 50px;
   display: flex;
+  justify-content: right;
   @media screen and (max-width: 500px) {
     padding: ${(props) => (props.$isOpen ? "0px" : "0.5rem 2vw")};
   }
@@ -78,6 +79,7 @@ export const NavMenu = styled.div`
   @media screen and (max-width: 500px) {
     display: ${(props) => (props.$isOpen ? "block" : "none")};
     position: ${(props) => (props.$isOpen ? "fixed" : "none")};
+    padding-right: 0px;
     animation: fadeIn 0.5s;
   }
 `;
