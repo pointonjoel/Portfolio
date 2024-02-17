@@ -9,8 +9,9 @@ export const Nav = styled.nav`
   background: ${(props) => props.theme.colors.primary};
   height: 50px;
   display: flex;
-  justify-content: right;
-  padding: ${(props) => (props.isOpen ? "0px" : "0.5rem 2vw")};
+  @media screen and (max-width: 500px) {
+    padding: ${(props) => (props.$isOpen ? "0px" : "0.5rem 2vw")};
+  }
 `;
 
 export const NavLink = styled.a`
@@ -21,7 +22,7 @@ export const NavLink = styled.a`
   height: 30px;
   font-weight: bold;
   cursor: pointer;
-  padding: ${(props) => props.hamburger && "4% 5%"};
+  padding: ${(props) => (props.$hamburger ? "4% 5%" : "20px")};
 
   &.active {
     color: #000000;
@@ -70,12 +71,13 @@ export const Cross = styled(IoCloseSharp)`
 export const NavMenu = styled.div`
   display: flex;
   align-items: center;
+  justify-content: right;
+  padding-right: 20px;
   width: 100%;
 
   @media screen and (max-width: 500px) {
-    display: ${(props) => (props.isOpen ? "block" : "none")};
-    position: ${(props) => (props.isOpen ? "fixed" : "none")};
-
+    display: ${(props) => (props.$isOpen ? "block" : "none")};
+    position: ${(props) => (props.$isOpen ? "fixed" : "none")};
     animation: fadeIn 0.5s;
   }
 `;

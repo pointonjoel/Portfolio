@@ -134,7 +134,6 @@ const Contact = () => {
             </FormRow>
             <FormRow>
               <HelperText role="alert">{messageError}</HelperText>
-              {errors && console.log(errors)}
             </FormRow>
             <CentreContainer>
               <Button type="submit">Send message</Button>

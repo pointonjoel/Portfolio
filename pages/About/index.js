@@ -10,7 +10,14 @@ const Contact = () => {
       <Title>About</Title>
 
       <Container>
-        <p style={{ width: "80%" }}>{TextStore.about.message}</p>
+        <p style={{ width: "80%" }}>
+          {TextStore.about.message.map((s) => (
+            <>
+              <p>{s}</p>
+              <br></br>
+            </>
+          ))}
+        </p>
         <ImageContainer>
           <Image
             style={{ borderRadius: "50%" }}

@@ -15,6 +15,7 @@ const theme = {
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const [showChild, setShowChild] = useState(false);
+
   useEffect(() => {
     setShowChild(true);
   }, []);
