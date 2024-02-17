@@ -5,12 +5,12 @@ import css from "@styled-system/css";
 
 export const Body = styled.body(
   css({
-    backgroundImage: `url(${backgroundImage.src})`,
+    // backgroundImage: `url(${backgroundImage.src})`,
     width: "100%",
-    backgroundSize: "contain",
-    backgroundRepeat: "repeat-y",
-    backgroundPosition: "left center",
-    backgroundSize: ["500px auto", "900px auto", "1000px auto"],
+    // backgroundSize: "contain",
+    // backgroundRepeat: "repeat-y",
+    // backgroundPosition: "left center",
+    // backgroundSize: ["500px auto", "900px auto", "1000px auto"],
   })
 );
 
@@ -87,8 +87,9 @@ export const ProjectTitle = styled.p`
 
 export const Bio = styled.div(
   css({
-    fontFamily: "London, sans-serif",
-    fontSize: ["17px", "20px", "25px"],
+    // fontFamily: "",
+    fontSize: ["17px", "20px", "30px"],
+    lineHeight: ["25px", "30px", "40px"],
   })
 );
 

@@ -9,7 +9,12 @@ function HeadCode() {
         content="Lily Pointon's Portfolio"
         key="title"
       />
-      <style>@import url('https://fonts.cdnfonts.com/css/london-3');</style>{" "}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap"
+        rel="stylesheet"
+      />
       <Script>
         {`(function(d) {
     var config = {

@@ -43,8 +43,8 @@ export const Title = styled.div(
 
 export const Description = styled.div(
   css({
-    fontFamily: "London, sans-serif",
     fontSize: ["17px", "20px", "25px"],
+    lineHeight: ["25px", "30px", "37px"],
   })
 );
 
