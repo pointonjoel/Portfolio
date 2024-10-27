@@ -18,6 +18,12 @@ import render4 from "../../public/Projects/Project 4/render.webp";
 import render5 from "../../public/Projects/Project 5/render.webp";
 import { useState, useEffect } from "react";
 
+const ErrorContent = (
+  <>
+    <div>Project does not exist, please select a valid project ID!</div>
+  </>
+);
+
 const Project = () => {
   const router = useRouter();
   const [id, setId] = useState(null);
@@ -34,6 +40,8 @@ const Project = () => {
   const allProjects = Object.values(TextStore.projects);
   const allProjectNames = Object.keys(allProjects);
   const validProject = allProjectNames.includes(id);
+  if (!validProject) return ErrorContent;
+
   const project = allProjects[id];
 
   let render = render1;
@@ -50,12 +58,8 @@ const Project = () => {
   } else {
     render = "";
   }
-  const ErrorContent = (
-    <>
-      <div>Project {id} does not exist, please select a valid project ID!</div>
-    </>
-  );
-  const PageContent = (
+
+  return (
     <>
       <TitleContainer
         style={{
@@ -89,7 +93,6 @@ const Project = () => {
       </ProjectsContainer>
     </>
   );
-  return validProject ? PageContent : ErrorContent;
 };
 
 export default Project;
