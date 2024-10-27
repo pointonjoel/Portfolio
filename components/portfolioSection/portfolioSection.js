@@ -8,7 +8,7 @@ export const PortfolioSection = ({ project, id }) => {
       <Container>
         <ProjectTitle>{project.name}</ProjectTitle>
         <Image
-          src={`/Projects/Project ${id + 1}/main.png`}
+          src={`/Projects/Project ${id + 1}/main.webp`}
           alt={`Cover photo for ${project.name}`}
           width={0}
           height={0}
