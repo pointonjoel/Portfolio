@@ -17,7 +17,7 @@ const Contact = () => {
           style={{ borderRadius: "50%" }}
           height={250}
           width={250}
-          src={"/profile.png"}
+          src={"/profile.webp"}
           alt={`Profile of Lily Pointon`}
         />
       </MobileImageContainer>
@@ -35,7 +35,7 @@ const Contact = () => {
             style={{ borderRadius: "50%" }}
             height={250}
             width={250}
-            src={"/profile.png"}
+            src={"/profile.webp"}
             alt={`Profile of Lily Pointon`}
           />
         </ImageContainer>

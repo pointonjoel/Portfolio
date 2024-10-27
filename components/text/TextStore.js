@@ -19,7 +19,6 @@ export const TextStore = {
       name: "Lamp",
       description:
         "This was a 6 week individual project that I worked on during my third year of university which particularly focussed on sustainability and had no set price limit so it was a great way to explore my creativity. Please find a downloadable pdf of the portfolio of this project below.",
-      photo: "png",
       download: "pdf",
       homepage: true,
     },
@@ -27,7 +26,6 @@ export const TextStore = {
       name: "Cable Wrap",
       description:
         "This was a 4 week individual project that I worked on during my third year of university and required us to use our technical knowledge of injection moulding. We were tasked with designing a cable wrap product for a 2m cable (I chose to design for an HDMI) to protect it from cable damage. Please find a downloadable pdf of the portfolio of this project below.",
-      photo: "png",
       download: "pdf",
       homepage: true,
     },
@@ -35,7 +33,6 @@ export const TextStore = {
       name: "EAV",
       description:
         "This was a 7 week group project that I worked on during my second year of university. We were tasked with designing an EAV (Electric Assisted Vehicle) that could be used to  Please find a downloadable pdf of the portfolio of this project below.",
-      photo: "png",
       download: "pptx",
       homepage: true,
     },
@@ -43,7 +40,6 @@ export const TextStore = {
       name: "Sharps Bin",
       description:
         "This was a 3 week individual project that I worked on during my second year of university which particularly focussed on sustainable materials. We were tasked with designing a sharps bn that could be used in a design studio for scalpel blades, scissors, staples etc. Please find a downloadable pdf of the portfolio of this project below.",
-      photo: "png",
       download: "pdf",
       homepage: true,
     },
@@ -51,21 +47,18 @@ export const TextStore = {
       name: "Portable BBQ",
       description:
         "This was the first full project I completed while at university. It was an 11 week individual project where we were asked to design a portable BBQ that fit the aesthetic and marketing of a made-up company 'Gril'. It was my first experience using Solidworks for a creative project that I had designed and my first time rendering on a project. Please find a downloadable pdf of the portfolio of this project below.",
-      photo: "png",
       download: "pdf",
       homepage: true,
     },
     6: {
       name: "6th Project",
       description: "My sixth ever project, probably",
-      photo: "png",
       download: "pdf",
       homepage: false,
     },
     7: {
       name: "7th Project",
       description: "You might never see this one",
-      photo: "png",
       download: "pdf",
       homepage: false,
     },

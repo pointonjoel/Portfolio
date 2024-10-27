@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import backgroundImage from "../public/backgroundImage.png";
-import mainRender from "../public/mainRender.png";
+// import backgroundImage from "../public/backgroundImage.webp";
+import mainRender from "../public/mainRender.webp";
 import css from "@styled-system/css";
 
 export const Body = styled.body(

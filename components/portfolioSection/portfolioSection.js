@@ -4,7 +4,7 @@ import { Container, ProjectTitle } from "../../styles/homeStyles";
 
 export const PortfolioSection = ({ project, id }) => {
   return (
-    <Link href={`/Projects/${id}`} key={id} passHref legacyBehavior>
+    <Link href={`/Projects?id=${id}`} key={id} passHref legacyBehavior>
       <Container>
         <ProjectTitle>{project.name}</ProjectTitle>
         <Image

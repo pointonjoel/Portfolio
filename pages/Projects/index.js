@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { TextStore } from "../../../components/text/TextStore";
+import { TextStore } from "../../components/text/TextStore";
 import {
   Container,
   Description,
@@ -8,37 +8,34 @@ import {
   Title,
   TitleContainer,
   ScrollContainer,
-} from "../../../styles/projectStyles";
-import { Button, FilledContainer } from "../../../styles/commonStyles";
-import PortfolioSection from "../../../components/portfolioSection/portfolioSection";
-import render1 from "../../../public/Projects/Project 1/render.png";
-import render2 from "../../../public/Projects/Project 2/render.png";
-import render3 from "../../../public/Projects/Project 3/render.png";
-import render4 from "../../../public/Projects/Project 4/render.png";
-import render5 from "../../../public/Projects/Project 5/render.png";
+} from "../../styles/projectStyles";
+import { Button, FilledContainer } from "../../styles/commonStyles";
+import PortfolioSection from "../../components/portfolioSection/portfolioSection";
+import render1 from "../../public/Projects/Project 1/render.webp";
+import render2 from "../../public/Projects/Project 2/render.webp";
+import render3 from "../../public/Projects/Project 3/render.webp";
+import render4 from "../../public/Projects/Project 4/render.webp";
+import render5 from "../../public/Projects/Project 5/render.webp";
+import { useState, useEffect } from "react";
 
-// To enable page reload with the slug
-export async function getStaticProps() {
-  const res = await fetch("https://api.github.com/repos/vercel/next.js");
-  const repo = await res.json();
-  return { props: { repo } };
-}
-
-export const getStaticPaths = async () => {
-  return {
-    paths: [], //indicates that no page needs be created at build time
-    fallback: "blocking", //indicates the type of fallback
-  };
-};
-
-const Project = ({ repo }) => {
+const Project = () => {
   const router = useRouter();
-  const projectID = router.query.projectID;
-  const projectNum = Number(projectID) + 1;
+  const [id, setId] = useState(null);
+
+  useEffect(() => {
+    if (router.isReady) {
+      setId(router.query.id); // Access the 'id' query parameter
+    }
+  }, [router.isReady, router.query.id]);
+
+  if (!id) return <div>Loading...</div>;
+
+  const projectNum = Number(id) + 1;
   const allProjects = Object.values(TextStore.projects);
   const allProjectNames = Object.keys(allProjects);
-  const validProject = allProjectNames.includes(projectID);
-  const project = allProjects[projectID];
+  const validProject = allProjectNames.includes(id);
+  const project = allProjects[id];
+
   let render = render1;
   if (projectNum === 1) {
     render = render1;
@@ -55,9 +52,7 @@ const Project = ({ repo }) => {
   }
   const ErrorContent = (
     <>
-      <div>
-        Project {projectID} does not exist, please select a valid project ID!
-      </div>
+      <div>Project {id} does not exist, please select a valid project ID!</div>
     </>
   );
   const PageContent = (
@@ -86,7 +81,7 @@ const Project = ({ repo }) => {
         <ProjectsHeading>Other Projects</ProjectsHeading>
         <ScrollContainer>
           {allProjects.map((project, index) =>
-            project.homepage && index != projectID ? (
+            project.homepage && index != id ? (
               <PortfolioSection project={project} id={index} key={index} />
             ) : null
           )}
