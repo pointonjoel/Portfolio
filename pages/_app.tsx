@@ -7,9 +7,9 @@ import Navbar from "../components/navbar/Navbar";
 
 const theme = {
   colors: {
-    primary: "#ECE7E1",
+    primary: "#D7C4AD",
     secondary: "#FFFFFF",
-    tertiary: "#898989ee",
+    tertiary: "#F6ECE0",
   },
 };
 
