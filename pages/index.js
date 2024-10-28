@@ -1,30 +1,13 @@
-// import {
-//   Body,
-//   Title,
-//   TitleContainer,
-//   ContainerDiv,
-//   Bio,
-//   Header,
-// } from "../styles/homeStyles";
-// import { PortfolioSection } from "../components/portfolioSection/portfolioSection";
-// import { FilledContainer } from "../styles/commonStyles";
-// import { TextStore } from "../components/text/TextStore";
-// import styled from "styled-components";
+import { ContainerDiv, Header } from "../styles/homeStyles";
+import { PortfolioSection } from "../components/portfolioSection/portfolioSection";
+import { TextStore } from "../components/text/TextStore";
 
-// const OpeningSection = () => {
-//   return (
-//     <TitleContainer>
-//       <Title>{TextStore.home.title}</Title>
-//     </TitleContainer>
-//   );
-// };
 import styled from "styled-components";
 import Image from "next/legacy/image";
-import { MobileImageContainer } from "../styles/aboutStyles";
+import css from "@styled-system/css";
 
 const Wrapper = styled.div`
   position: relative;
-  display: flex;
 `;
 
 const BackgroundDiv = styled.div`
@@ -42,20 +25,25 @@ const Content = styled.div`
   padding: 20px;
 `;
 
-const Container = styled.div`
-  display: flex;
-  width: 100%;
-  height: 100%;
-`;
+const Container = styled.div(
+  css({
+    display: "flex",
+    flexDirection: ["column", "row"], // column on small screens, row on larger screens
+    width: "100%",
+    height: "100%",
+  })
+);
 
-const LeftSection = styled.div`
-  width: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: right;
-  padding-right: 40px;
-  /* background-color: ${(props) => props.theme.colors.primary}; */
-`;
+const LeftSection = styled.div(
+  css({
+    width: ["100%", "50%"], // Full width on small screens, 50% on larger screens
+    display: "flex",
+    alignItems: "center",
+    justifyContent: ["center", "flex-end"], // Centered on small screens
+    paddingRight: [0, "40px"], // Remove padding on small screens
+    paddingBottom: ["20px", 0], // Optional padding on small screens
+  })
+);
 
 const ProfileCard = styled.div`
   width: 300px;
@@ -77,37 +65,45 @@ const Title = styled.p`
   margin-bottom: 20px;
 `;
 
-const RightSection = styled.div`
-  width: 50%;
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-`;
+const RightSection = styled.div(
+  css({
+    width: ["100%", "50%"], // Full width on small screens, 50% on larger screens
+    padding: ["20px", "40px"], // Adjust padding for smaller screens
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: ["left", "center"],
+  })
+);
 
-const BioCard = styled.div`
-  width: 80%;
-  text-align: left;
-  border-radius: 2px;
-  padding: 20px;
-`;
+const BioCard = styled.div(
+  css({
+    width: ["100%", "80%"],
+    textAlign: ["center", "left"],
+    borderRadius: "2px",
+    padding: ["0px", "20px"],
+  })
+);
 
 const Heading = styled.h1`
-  font-size: 3em;
+  font-size: 5em;
   font-weight: bold;
 `;
 
 const Description = styled.p`
-  font-size: 1.2em;
+  font-size: ${(props) => (props.light ? "1.1em" : "1.2em")};
   line-height: 1.5;
   margin: 20px 0;
+  font-weight: ${(props) => (props.light ? 300 : 400)};
 `;
 
-const ButtonContainer = styled.div`
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
-`;
+const ButtonContainer = styled.div(
+  css({
+    display: "flex",
+    gap: "10px",
+    marginTop: "20px",
+    justifyContent: ["center", "left"],
+  })
+);
 
 const Button = styled.button`
   padding: 10px 20px;
@@ -124,6 +120,22 @@ const Button = styled.button`
   }
 `;
 
+export const PortfolioSamples = () => {
+  const allProjects = Object.values(TextStore.projects);
+  return (
+    <>
+      <Header id="projects">Projects</Header>
+      <ContainerDiv>
+        {allProjects.map((project, index) =>
+          project.homepage ? (
+            <PortfolioSection project={project} id={index} key={index} />
+          ) : null
+        )}
+      </ContainerDiv>
+    </>
+  );
+};
+
 export default function Main() {
   return (
     <Wrapper>
@@ -132,15 +144,6 @@ export default function Main() {
         <Container>
           <LeftSection>
             <ProfileCard>
-              {/* <MobileImageContainer>
-                <Image
-                  style={{ borderRadius: "50%" }}
-                  height={250}
-                  width={250}
-                  src={"/profile.webp"}
-                  alt={`Profile of Lily Pointon`}
-                />
-              </MobileImageContainer> */}
               <Image
                 style={{ borderRadius: "50%" }}
                 height={150}
@@ -165,7 +168,7 @@ export default function Main() {
                 <Button primary>Portfolio</Button>
                 <Button>Projects</Button>
               </ButtonContainer>
-              <Description>
+              <Description light>
                 I have a passion for good design and want to use what I have
                 learnt to make a difference in the world by bringing innovation
                 to help solve important problems.
@@ -174,6 +177,7 @@ export default function Main() {
           </RightSection>
         </Container>
       </Content>
+      <PortfolioSamples />
     </Wrapper>
   );
 }
