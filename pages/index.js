@@ -161,8 +161,8 @@ export default function Main() {
             <BioCard>
               <Heading>Hello</Heading>
               <Description>
-                I’m a product design and manufacture engineering, final year,
-                MEng student based in Nottingham.
+                I&apos;m a product design and manufacture engineering, final
+                year, MEng student based in Nottingham.
               </Description>
               <ButtonContainer>
                 <Button primary>Portfolio</Button>
