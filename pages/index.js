@@ -125,7 +125,9 @@ export const PortfolioSamples = () => {
   return (
     <>
       <Header id="projects">Projects</Header>
-      <ContainerDiv>
+      <ContainerDiv
+        style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
+      >
         {allProjects.map((project, index) =>
           project.homepage ? (
             <PortfolioSection project={project} id={index} key={index} />

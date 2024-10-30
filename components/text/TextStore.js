@@ -51,16 +51,16 @@ export const TextStore = {
       homepage: true,
     },
     6: {
-      name: "6th Project",
-      description: "My sixth ever project, probably",
+      name: "Humidifier",
+      description: "Description pending.",
       download: "pdf",
-      homepage: false,
+      homepage: true,
     },
     7: {
-      name: "7th Project",
-      description: "You might never see this one",
+      name: "Assistive Devices",
+      description: "Description pending.",
       download: "pdf",
-      homepage: false,
+      homepage: true,
     },
   },
 };
