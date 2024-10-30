@@ -1,6 +1,7 @@
 export const TextStore = {
   home: {
     title: "Lily Pointon",
+    subtitle: "Industrial Designer",
     bio: "Hi there - I'm Lily! Please feel free to browse my projects and use the links above to contact me...",
   },
   contact: {

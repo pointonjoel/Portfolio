@@ -153,8 +153,8 @@ export default function Main() {
                 src={"/profile.webp"}
                 alt={`Profile of Lily Pointon`}
               />
-              <Name>Lily Pointon</Name>
-              <Title>Industrial Designer</Title>
+              <Name>{TextStore.home.title}</Name>
+              <Title>{TextStore.home.subtitle}</Title>
               <Button>LinkedIn</Button>
             </ProfileCard>
           </LeftSection>

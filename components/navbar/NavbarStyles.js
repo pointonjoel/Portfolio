@@ -75,6 +75,7 @@ export const NavMenu = styled.div`
   justify-content: right;
   padding-right: 20px;
   width: 100%;
+  z-index: 1;
 
   @media screen and (max-width: 500px) {
     display: ${(props) => (props.$isOpen ? "block" : "none")};
