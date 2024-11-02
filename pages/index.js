@@ -21,10 +21,14 @@ const BackgroundDiv = styled.div`
   z-index: -1;
 `;
 
-const Content = styled.div`
-  width: 100%;
-  padding: 20px;
-`;
+const Content = styled.div(
+  css({
+    width: "100vw", // Full width of the viewport
+    height: [null, "90vh"], // Full height of the viewport
+    padding: "20px",
+    boxSizing: "border-box", // Ensure padding is included in total height and width
+  })
+);
 
 const Container = styled.div(
   css({
@@ -37,12 +41,13 @@ const Container = styled.div(
 
 const LeftSection = styled.div(
   css({
-    width: ["100%", "50%"], // Full width on small screens, 50% on larger screens
+    width: ["100%", null, "50%"], // Full width on small screens, 50% on larger screens
     display: "flex",
     alignItems: "center",
     justifyContent: ["center", "flex-end"], // Centered on small screens
     paddingRight: [0, "40px"], // Remove padding on small screens
     paddingBottom: ["20px", 0], // Optional padding on small screens
+    paddingTop: ["30px", 0],
   })
 );
 
@@ -68,8 +73,8 @@ const Title = styled.p`
 
 const RightSection = styled.div(
   css({
-    width: ["100%", "50%"], // Full width on small screens, 50% on larger screens
-    padding: ["20px", "40px"], // Adjust padding for smaller screens
+    width: ["100%", null, "50%"], // Full width on small screens, 50% on larger screens
+    padding: ["10px", "20px", "40px"], // Adjust padding for smaller screens
     display: "flex",
     flexDirection: "column",
     justifyContent: ["left", "center"],
@@ -78,7 +83,7 @@ const RightSection = styled.div(
 
 const BioCard = styled.div(
   css({
-    width: ["100%", "80%"],
+    width: ["100%", null, "80%"],
     textAlign: ["center", "left"],
     borderRadius: "2px",
     padding: ["0px", "20px"],
@@ -147,19 +152,14 @@ export default function Main() {
 
           <RightSection>
             <BioCard>
-              <Heading>Hello</Heading>
-              <Description>
-                I&apos;m a product design and manufacture engineering, final
-                year, MEng student based in Nottingham.
-              </Description>
+              <Heading>{TextStore.home.heading}</Heading>
+              <Description>{TextStore.home.bio}</Description>
               <ButtonContainer>
                 <Button primary>Portfolio</Button>
                 <Button>Projects</Button>
               </ButtonContainer>
-              <Description light>
-                I have a passion for good design and want to use what I have
-                learnt to make a difference in the world by bringing innovation
-                to help solve important problems.
+              <Description light style={{ marginBottom: "0px" }}>
+                {TextStore.home.bio_2}
               </Description>
             </BioCard>
           </RightSection>

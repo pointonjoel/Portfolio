@@ -2,7 +2,10 @@ export const TextStore = {
   home: {
     title: "Lily Pointon",
     subtitle: "Industrial Designer",
-    bio: "Hi there - I'm Lily! Please feel free to browse my projects and use the links above to contact me...",
+    heading: "Hello",
+    bio: "I'm a product design and manufacture engineering, final year, MEng student based in Nottingham.",
+    bio_2:
+      "I have a passion for good design and want to use what I have learnt to make a difference in the world by bringing innovation to help solve important problems.",
   },
   contact: {
     message:

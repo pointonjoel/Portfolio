@@ -98,6 +98,6 @@ export const Header = styled.p(
     textAlign: "center",
     fontWeight: "Medium",
     fontSize: ["35px", "40px", "50px"],
-    padding: ["30px 10px", "40px 10px", "50px 10px"],
+    padding: ["10px 10px", "40px 10px", "50px 10px"],
   })
 );
