@@ -8,6 +8,7 @@ import css from "@styled-system/css";
 
 const Polaroid = styled.div(
   css({
+    minWidth: "100px",
     width: ["150px", "250px"],
     padding: "10px",
     backgroundColor: "white",
@@ -43,6 +44,7 @@ const ProjectTitle = styled.div`
 
 // Update PortfolioSection component to use the Polaroid styling
 export const PortfolioSection = ({ project, id }) => {
+  console.log("project", project);
   return (
     <Link href={`/Projects?id=${id}`} key={id} passHref legacyBehavior>
       <Polaroid key={id}>
@@ -53,6 +55,7 @@ export const PortfolioSection = ({ project, id }) => {
           height={200}
           // sizes="100vw"
           // objectFit="cover"
+          // layout="fill"
         />
         <ProjectTitle>{project.name}</ProjectTitle>
       </Polaroid>
