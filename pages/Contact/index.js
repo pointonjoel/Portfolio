@@ -3,16 +3,38 @@ import emailjs from "@emailjs/browser";
 import { useForm } from "react-hook-form";
 import {
   CentreContainer,
-  Container,
-  FormContainer,
   FormRow,
-  HelperText,
   Input,
   TextArea,
+  FormContainer,
+  Container,
+  Heading,
 } from "../../styles/contactStyles";
-import { Button, Title } from "../../styles/commonStyles";
+import {
+  Wrapper,
+  BackgroundDiv,
+  Content,
+  Button,
+} from "../../styles/commonStyles";
 import { TextStore } from "../../components/text/TextStore";
 import ClipLoader from "react-spinners/ClipLoader";
+import styled from "styled-components";
+
+import PortfolioSection from "../../components/portfolioSection/portfolioSection";
+import {
+  ProjectsContainer,
+  ProjectsHeading,
+  ScrollContainer,
+} from "../../styles/projectStyles";
+
+const ResponsiveProjectsContainer = styled(ProjectsContainer)`
+  display: none; /* Hide by default */
+
+  @media (max-width: 768px) {
+    /* Adjust the max-width as per your design */
+    display: block; /* Show on mobile */
+  }
+`;
 
 const Contact = () => {
   const form = useRef();
@@ -21,6 +43,7 @@ const Contact = () => {
 
   let successMsg = "";
   let errorMsg = "";
+  const allProjects = Object.values(TextStore.projects);
 
   const sendEmail = (e) => {
     setStatus({ type: "", value: "" });
@@ -69,70 +92,86 @@ const Contact = () => {
 
   return (
     <>
-      <Title>Contact</Title>
+      <Wrapper>
+        <BackgroundDiv />
+        <Content>
+          <Container>
+            <Heading>Get in touch</Heading>
+            <FormContainer>
+              <form ref={form} onSubmit={handleSubmit(sendEmail)}>
+                <FormRow>
+                  <Input
+                    id="name"
+                    type="text"
+                    name="name"
+                    placeholder="Your name"
+                    required
+                    {...register("name", {
+                      minLength: 2,
+                      maxLength: 20,
+                    })}
+                  />
+                </FormRow>
+                <FormRow>
+                  <Input
+                    id="reply_to"
+                    type="email"
+                    name="reply_to"
+                    placeholder="Your email"
+                    required
+                    {...register("reply_to")}
+                  />
+                </FormRow>
+                <FormRow style={{ alignItems: "none" }}>
+                  <TextArea
+                    id="message"
+                    name="message"
+                    placeholder="Leave me a message"
+                    required
+                    {...register("message")}
+                  />
+                </FormRow>
+                <CentreContainer>
+                  {sending ? (
+                    <ClipLoader
+                      color="black"
+                      loading={sending}
+                      size={30}
+                      aria-label="Loading Spinner"
+                      data-testid="loader"
+                    />
+                  ) : (
+                    <Button type="submit">Send message</Button>
+                  )}
+                </CentreContainer>
+                {(successMsg || errorMsg) && (
+                  <FormRow
+                    style={{
+                      justifyContent: "center",
+                      fontSize: "17px",
+                      paddingTop: "10px",
+                    }}
+                  >
+                    <p>
+                      {successMsg}
+                      {errorMsg}
+                    </p>
+                  </FormRow>
+                )}
+              </form>
+            </FormContainer>
 
-      <Container>
-        <p>{TextStore.contact.message}</p>
-        <FormContainer>
-          <form ref={form} onSubmit={handleSubmit(sendEmail)}>
-            <FormRow>
-              <label for="name">Name:</label>
-              <Input
-                id="name"
-                type="text"
-                name="name"
-                required
-                {...register("name", {
-                  minLength: 2,
-                  maxLength: 20,
-                })}
-              />
-            </FormRow>
-            <FormRow>
-              <label for="reply_to">Email:</label>
-              <Input
-                id="reply_to"
-                type="email"
-                name="reply_to"
-                required
-                {...register("reply_to")}
-              />
-            </FormRow>
-            <FormRow style={{ alignItems: "none" }}>
-              <label for="message">Message:</label>
-              <TextArea
-                id="message"
-                name="message"
-                required
-                {...register("message")}
-              />
-            </FormRow>
-            <CentreContainer>
-              <Button type="submit">Send message</Button>
-            </CentreContainer>
-            <FormRow
-              style={{
-                justifyContent: "center",
-                fontSize: "17px",
-                paddingTop: "10px",
-              }}
-            >
-              <p>
-                {successMsg}
-                {errorMsg}
-              </p>
-
-              <ClipLoader
-                color="black"
-                loading={sending}
-                size={30}
-                aria-label="Loading Spinner"
-                data-testid="loader"
-              />
-            </FormRow>
-          </form>
-        </FormContainer>
-      </Container>
+            <ResponsiveProjectsContainer style={{ marginTop: "50px" }}>
+              <ProjectsHeading>Projects</ProjectsHeading>
+              <ScrollContainer>
+                {allProjects.map((project, index) => (
+                  <PortfolioSection project={project} id={index} key={index} />
+                ))}
+              </ScrollContainer>
+            </ResponsiveProjectsContainer>
+          </Container>
+        </Content>
+      </Wrapper>
     </>
   );
 };

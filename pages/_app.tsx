@@ -10,6 +10,7 @@ const theme = {
     primary: "#D7C4AD",
     secondary: "#FFFFFF",
     tertiary: "#F6ECE0",
+    dark: "#555",
   },
 };
 

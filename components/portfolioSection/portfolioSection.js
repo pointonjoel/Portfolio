@@ -43,7 +43,6 @@ const ProjectTitle = styled.div`
 
 // Update PortfolioSection component to use the Polaroid styling
 export const PortfolioSection = ({ project, id }) => {
-  console.log("project", project);
   return (
     <Link href={`/Projects?id=${id}`} key={id} passHref legacyBehavior>
       <Polaroid key={id}>

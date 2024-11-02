@@ -4,28 +4,38 @@ import css from "@styled-system/css";
 export const Container = styled.div(
   css({
     display: "flex",
-    px: "10px",
-    flexWrap: "wrap",
-    width: ["90%", "75%", "60%"],
-    minWidth: "200px",
-    justifyContent: "center",
-    fontSize: "20px",
-    margin: "0px auto 50px",
+    flexDirection: "column",
+    justifyContent: ["top", null, "center"],
+    alignItems: "center",
+    minHeight: "90vh",
+    margin: "10px",
   })
 );
 
-export const FormContainer = styled.div`
-  display: flex;
-  border: 2px solid ${(props) => props.theme.colors.primary};
-  border-radius: 20px;
-  padding: 3% 5% 5px;
-  margin-top: 15px;
-`;
+export const FormContainer = styled.div(
+  css({
+    width: ["100%", "70%", "50%"],
+    textAlign: "center",
+    backgroundColor: "#F6ECE0",
+    borderRadius: "2px",
+    padding: ["10px", null, "30px"],
+    boxShadow: "0 6px 10px rgba(0, 0, 0, 0.3)",
+  })
+);
+
+export const Heading = styled.h1(
+  css({
+    fontSize: ["4em", null, "5em"],
+    fontWeight: "bold",
+    textAlign: "center",
+    padding: ["30px", null, "10px"],
+  })
+);
 
 export const FormRow = styled.div(
   css({
     display: "flex",
-    width: ["100%", "350px", "500px", "600px"],
+    width: "100%",
     alignItems: "center",
     marginBottom: "15px",
   })
@@ -41,40 +51,38 @@ export const HelperText = styled.p(
 );
 
 export const Input = styled.input`
-  border-radius: 20px;
+  border: none;
+  border-bottom: ${(props) => `2px solid ${props.theme.colors.dark}`};
   width: 100%;
-  min-width: 50px;
   height: 30px;
   margin-left: 10px;
   padding-left: 10px;
-  border: 2px solid ${(props) => props.theme.colors.primary};
-  background: ${(props) => props.theme.colors.primary};
+  background: transparent;
   font-size: 17px;
+  color: black;
 
   &:focus {
     transition: all 0.1s ease-in-out;
-
-    background: ${(props) => props.theme.colors.secondary};
+    background: transparent;
     outline: none;
   }
 `;
 
 export const TextArea = styled.textarea`
-  border-radius: 20px;
+  border: none;
+  border-bottom: ${(props) => `2px solid ${props.theme.colors.dark}`};
   width: 100%;
   height: 150px;
   margin-left: 10px;
   padding-left: 10px;
-  border: 2px solid ${(props) => props.theme.colors.primary};
-  background: ${(props) => props.theme.colors.primary};
+  background: transparent;
   font-size: 17px;
+  color: black;
   margin-top: 0px;
 
   &:focus {
-    transition: color 0.1s ease-in-out;
-
-    border: 2px solid ${(props) => props.theme.colors.primary};
-    background: ${(props) => props.theme.colors.secondary};
+    transition: all 0.1s ease-in-out;
+    background: transparent;
     outline: none;
   }
 `;
@@ -82,7 +90,7 @@ export const TextArea = styled.textarea`
 export const CentreContainer = styled.div(
   css({
     display: "flex",
-    pt: "10px",
+    padding: ["10px", null, "10px 0 0"],
     justifyContent: "center",
   })
 );

@@ -26,6 +26,38 @@ import css from "@styled-system/css";
 //   }
 // `;
 
+export const Wrapper = styled.div`
+  position: relative;
+`;
+
+export const BackgroundDiv = styled.div`
+  width: 40%;
+  height: 100%;
+  background-color: ${(props) => props.theme.colors.primary};
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+`;
+
+export const Content = styled.div(
+  css({
+    width: "100%", // Full width of the viewport
+    height: [null, "100%"], // Full height of the viewport
+    padding: ["15px", null, "20px"],
+    boxSizing: "border-box", // Ensure padding is included in total height and width
+  })
+);
+
+export const Container = styled.div(
+  css({
+    display: "flex",
+    flexDirection: ["column", "row"], // column on small screens, row on larger screens
+    width: "100%",
+    height: "100%",
+  })
+);
+
 export const Button = styled.button`
   padding: 10px 20px;
   font-size: 1em;
@@ -67,4 +99,9 @@ export const FilledContainer = styled.div`
   text-align: center;
   width: 65%;
   max-width: 700px;
+`;
+
+export const Heading = styled.h1`
+  font-size: 5em;
+  font-weight: bold;
 `;
