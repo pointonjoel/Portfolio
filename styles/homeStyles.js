@@ -32,8 +32,8 @@ export const LeftSection = styled.div(
     alignItems: "center",
     justifyContent: ["center", "flex-end"], // Centered on small screens
     paddingRight: [0, "40px"], // Remove padding on small screens
-    paddingBottom: ["20px", 0], // Optional padding on small screens
-    paddingTop: ["30px", 0],
+    paddingBottom: ["30px", 0], // Optional padding on small screens
+    paddingTop: ["40px", 0],
   })
 );
 

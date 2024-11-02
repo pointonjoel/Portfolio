@@ -43,7 +43,7 @@ export const BackgroundDiv = styled.div`
 export const Content = styled.div(
   css({
     width: "100%", // Full width of the viewport
-    height: [null, "100%"], // Full height of the viewport
+    height: [null, null, "100vh"], // Full height of the viewport
     padding: ["15px", null, "20px"],
     boxSizing: "border-box", // Ensure padding is included in total height and width
   })
