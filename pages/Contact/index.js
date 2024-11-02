@@ -29,6 +29,7 @@ import {
 
 const ResponsiveProjectsContainer = styled(ProjectsContainer)`
   display: none; /* Hide by default */
+  margin-top: 50px;
 
   @media (max-width: 768px) {
     /* Adjust the max-width as per your design */
@@ -161,7 +162,7 @@ const Contact = () => {
               </form>
             </FormContainer>
 
-            <ResponsiveProjectsContainer style={{ marginTop: "50px" }}>
+            <ResponsiveProjectsContainer>
               <ProjectsHeading>Projects</ProjectsHeading>
               <ScrollContainer>
                 {allProjects.map((project, index) => (

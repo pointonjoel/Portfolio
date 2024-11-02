@@ -18,7 +18,7 @@ export const FormContainer = styled.div(
     textAlign: "center",
     backgroundColor: "#F6ECE0",
     borderRadius: "2px",
-    padding: ["10px", null, "30px"],
+    padding: ["20px", null, "30px"],
     boxShadow: "0 6px 10px rgba(0, 0, 0, 0.3)",
   })
 );
