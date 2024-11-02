@@ -8,7 +8,7 @@ import css from "@styled-system/css";
 
 const Polaroid = styled.div(
   css({
-    minWidth: "100px",
+    minWidth: "110px",
     width: ["150px", "250px"],
     padding: "10px",
     backgroundColor: "white",
