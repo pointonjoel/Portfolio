@@ -66,14 +66,7 @@ const Contact = () => {
     formState: { errors },
     reset,
   } = useForm();
-  let nameError = "";
-  let emailError = "";
-  let messageError = "";
-  console.log("here!!", errors);
-  if (errors.reply_to?.type === "pattern") {
-    console.log("error here!");
-    emailError = "Please enter a valid email address";
-  }
+
   return (
     <>
       <Title>Contact</Title>
@@ -90,29 +83,20 @@ const Contact = () => {
                 name="name"
                 required
                 {...register("name", {
-                  // required: true,
                   minLength: 2,
                   maxLength: 20,
                 })}
               />
             </FormRow>
             <FormRow>
-              <HelperText role="alert">{nameError}</HelperText>
-            </FormRow>
-            <FormRow>
               <label for="reply_to">Email:</label>
               <Input
                 id="reply_to"
-                type="text"
+                type="email"
                 name="reply_to"
                 required
-                {...register("reply_to", {
-                  pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
-                })}
+                {...register("reply_to")}
               />
-            </FormRow>
-            <FormRow>
-              <HelperText role="alert">{emailError}</HelperText>
             </FormRow>
             <FormRow style={{ alignItems: "none" }}>
               <label for="message">Message:</label>
@@ -122,9 +106,6 @@ const Contact = () => {
                 required
                 {...register("message")}
               />
-            </FormRow>
-            <FormRow>
-              <HelperText role="alert">{messageError}</HelperText>
             </FormRow>
             <CentreContainer>
               <Button type="submit">Send message</Button>
@@ -142,7 +123,7 @@ const Contact = () => {
               </p>
 
               <ClipLoader
-                color="#00000"
+                color="black"
                 loading={sending}
                 size={30}
                 aria-label="Loading Spinner"

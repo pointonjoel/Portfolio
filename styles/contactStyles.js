@@ -27,7 +27,7 @@ export const FormRow = styled.div(
     display: "flex",
     width: ["100%", "350px", "500px", "600px"],
     alignItems: "center",
-    marginBottom: "5px",
+    marginBottom: "15px",
   })
 );
 
@@ -68,7 +68,7 @@ export const TextArea = styled.textarea`
   border: 2px solid ${(props) => props.theme.colors.primary};
   background: ${(props) => props.theme.colors.primary};
   font-size: 17px;
-  margin-top: 10px;
+  margin-top: 0px;
 
   &:focus {
     transition: color 0.1s ease-in-out;

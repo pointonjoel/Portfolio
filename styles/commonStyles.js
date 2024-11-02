@@ -1,28 +1,44 @@
 import styled from "styled-components";
 import css from "@styled-system/css";
 
-export const Button = styled.button`
-  background: ${(props) =>
-    props.primary ? props.theme.colors.primary : "white"};
-  color: ${(props) => (props.primary ? "white" : props.theme.colors.primary)};
-  border: 2px solid ${(props) => props.theme.colors.primary};
+// export const Button = styled.button`
+//   background: ${(props) =>
+//     props.primary ? props.theme.colors.primary : "white"};
+//   color: ${(props) => (props.primary ? "white" : props.theme.colors.primary)};
+//   border: 2px solid ${(props) => props.theme.colors.primary};
 
-  font-size: 17px;
-  font-weight: bold;
-  padding: 1px 10px;
-  border-radius: 5px;
+//   font-size: 17px;
+//   font-weight: bold;
+//   padding: 1px 10px;
+//   border-radius: 5px;
+
+//   &:hover {
+//     transition: all 0.2s ease-in-out;
+//     color: #000000;
+
+//     background: ${(props) =>
+//       props.primary ? "white" : props.theme.colors.primary};
+//     color: ${(props) => (props.primary ? props.theme.colors.primary : "white")};
+//   }
+
+//   &:active {
+//     transform: scale(0.92);
+//   }
+// `;
+
+export const Button = styled.button`
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: ${(props) =>
+    props.primary ? props.theme.colors.primary : "transparent"};
+  border: ${(props) => `2px solid ${props.theme.colors.primary}`};
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 
   &:hover {
-    transition: all 0.2s ease-in-out;
-    color: #000000;
-
-    background: ${(props) =>
-      props.primary ? "white" : props.theme.colors.primary};
-    color: ${(props) => (props.primary ? props.theme.colors.primary : "white")};
-  }
-
-  &:active {
-    transform: scale(0.92);
+    background-color: ${(props) => props.theme.colors.primary};
+    color: white;
   }
 `;
 

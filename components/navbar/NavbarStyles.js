@@ -16,7 +16,7 @@ export const Nav = styled.nav`
 `;
 
 export const NavLink = styled.a`
-  color: #fff;
+  color: white;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -26,12 +26,12 @@ export const NavLink = styled.a`
   padding: ${(props) => (props.$hamburger ? "4% 5%" : "20px")};
 
   &.active {
-    color: #000000;
+    color: black;
   }
 
   &:hover {
     transition: all 0.2s ease-in-out;
-    color: #000000;
+    color: black;
   }
 
   @media screen and (max-width: 500px) {
@@ -42,7 +42,7 @@ export const NavLink = styled.a`
 
 export const Hamburger = styled(GiHamburgerMenu)`
   display: none;
-  color: #fff;
+  color: white;
   z-index: 1;
   animation: fadeIn 0.5s;
 
@@ -56,7 +56,7 @@ export const Hamburger = styled(GiHamburgerMenu)`
 
 export const Cross = styled(IoCloseSharp)`
   display: none;
-  color: #fff;
+  color: white;
   margin: 0.5rem 2vw 0px 0px;
   z-index: 1;
   animation: fadeIn 0.5s;
@@ -108,7 +108,7 @@ export const NavBtnLink = styled.a`
   border-radius: 4px;
   background: ${(props) => props.theme.colors.primary};
   padding: 10px 22px;
-  color: #fff;
+  color: white;
   outline: none;
   border: none;
   cursor: pointer;
@@ -120,7 +120,7 @@ export const NavBtnLink = styled.a`
 
   &:hover {
     transition: all 0.2s ease-in-out;
-    background: #000000;
+    background: black;
     color: ${(props) => props.theme.colors.secondary};
   }
 `;

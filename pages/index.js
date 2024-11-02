@@ -1,6 +1,7 @@
 import { ContainerDiv, Header } from "../styles/homeStyles";
 import { PortfolioSection } from "../components/portfolioSection/portfolioSection";
 import { TextStore } from "../components/text/TextStore";
+import { Button } from "../styles/commonStyles";
 
 import styled from "styled-components";
 import Image from "next/legacy/image";
@@ -104,21 +105,6 @@ const ButtonContainer = styled.div(
     justifyContent: ["center", "left"],
   })
 );
-
-const Button = styled.button`
-  padding: 10px 20px;
-  font-size: 1em;
-  background-color: ${(props) => (props.primary ? "#D1BAA8" : "transparent")};
-  border: 2px solid #d1baa8;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-
-  &:hover {
-    background-color: #d1baa8;
-    color: white;
-  }
-`;
 
 export const PortfolioSamples = () => {
   const allProjects = Object.values(TextStore.projects);
