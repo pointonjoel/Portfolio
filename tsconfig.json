@@ -1,9 +1,11 @@
 {
   "compilerOptions": {
+    "target": "ES2017", // Supports top-level await and other modern features
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": false,
+    "strict": false, // Set to true if you want stricter type-checking
+    "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "incremental": true,
     "esModuleInterop": true,
@@ -14,5 +16,9 @@
     "jsx": "preserve"
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "server.js"],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules",
+    ".next", // Exclude build output
+    "out" // Exclude exported static files
+  ]
 }
