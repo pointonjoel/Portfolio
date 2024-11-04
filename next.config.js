@@ -4,7 +4,7 @@ const nextConfig = {
   trailingSlash: true,
   images: {
     loader: "akamai",
-    path: "",
+    path: "/", // Ensures images are loaded from the correct root path with the trailing slash
   },
 };
 
