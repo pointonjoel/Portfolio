@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "target": "ES2017", // Supports top-level await and other modern features
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
