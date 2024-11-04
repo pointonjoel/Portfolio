@@ -68,13 +68,13 @@ const Navbar = () => {
             setHamburgerOpen={setHamburgerOpen}
           />
           <CustomLink
-            to="/About"
+            to="/about"
             name="About"
             hamburger={hamburgerOpen}
             setHamburgerOpen={setHamburgerOpen}
           />
           <CustomLink
-            to="/Contact"
+            to="/contact"
             name="Contact"
             hamburger={hamburgerOpen}
             setHamburgerOpen={setHamburgerOpen}
