@@ -9,7 +9,7 @@ const CustomLink = ({ to, name, hamburger, setHamburgerOpen }) => {
   const handleClick = (event) => {
     // Check if the link is targeting an anchor
     if (to.startsWith("/#")) {
-      event.preventDefault(); // Prevent default link behavior
+      event.preventDefault();
 
       const targetId = to.split("#")[1]; // Extract the ID from the link
 
