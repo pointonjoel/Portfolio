@@ -23,6 +23,13 @@ import {
 
 import Image from "next/legacy/image";
 
+const scrollToProjects = () => {
+  const projectsSection = document.getElementById("projects");
+  if (projectsSection) {
+    projectsSection.scrollIntoView({ behavior: "smooth" });
+  }
+};
+
 export const PortfolioSamples = () => {
   const allProjects = Object.values(TextStore.projects);
   return (
@@ -58,7 +65,16 @@ export default function Main() {
               />
               <Name>{TextStore.home.title}</Name>
               <Title>{TextStore.home.subtitle}</Title>
-              <Button>LinkedIn</Button>
+              <Button
+                onClick={() =>
+                  window.open(
+                    "https://www.linkedin.com/in/lily-pointon-730476291",
+                    "_blank"
+                  )
+                }
+              >
+                LinkedIn
+              </Button>
             </ProfileCard>
           </LeftSection>
 
@@ -68,7 +84,7 @@ export default function Main() {
               <Description>{TextStore.home.bio}</Description>
               <ButtonContainer>
                 <Button primary>Portfolio</Button>
-                <Button>Projects</Button>
+                <Button onClick={scrollToProjects}>Projects</Button>
               </ButtonContainer>
               <Description light style={{ marginBottom: "0px" }}>
                 {TextStore.home.bio_2}
