@@ -46,7 +46,7 @@ const ProjectTitle = styled.div`
 export const PortfolioSection = ({ project, id }) => {
   console.log("project", project);
   return (
-    <Link href={`/Projects?id=${id}`} key={id} passHref legacyBehavior>
+    <Link href={`/projects?id=${id}`} key={id} passHref legacyBehavior>
       <Polaroid key={id}>
         <ProjectImage
           src={`/Projects/Project ${id + 1}/main.webp`}
