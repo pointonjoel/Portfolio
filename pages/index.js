@@ -83,7 +83,17 @@ export default function Main() {
               <Heading>{TextStore.home.heading}</Heading>
               <Description>{TextStore.home.bio}</Description>
               <ButtonContainer>
-                <Button primary>Portfolio</Button>
+                <Button
+                  primary
+                  onClick={() => {
+                    const link = document.createElement("a");
+                    link.href = "/Lily Pointon Portfolio.pdf"; // Relative path from the public folder
+                    link.download = "Lily Pointon Portfolio.pdf"; // Sets the default file name for download
+                    link.click();
+                  }}
+                >
+                  Portfolio
+                </Button>
                 <Button onClick={scrollToProjects}>Projects</Button>
               </ButtonContainer>
               <Description light style={{ marginBottom: "0px" }}>
