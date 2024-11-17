@@ -1,10 +1,6 @@
+import React, { useEffect, useState, useRef } from "react";
 import {
-  LeftSection,
   ProfileCard,
-  RightSection,
-  BioCard,
-  Description,
-  ButtonContainer,
   Name,
   Title,
   Header,
@@ -19,9 +15,16 @@ import {
   Container,
   Button,
   Heading,
+  LeftSectionWithScroll,
+  RightSectionWithScroll,
+  BioCard,
+  Description,
+  ButtonContainer,
 } from "../styles/commonStyles";
+import useScrollAnimation from "../utils/useScrollAnimation";
 
 import Image from "next/legacy/image";
+import Link from "next/link";
 
 const scrollToProjects = () => {
   const projectsSection = document.getElementById("projects");
@@ -54,31 +57,49 @@ export default function Main() {
       <BackgroundDiv />
       <Content>
         <Container>
-          <LeftSection>
+          <LeftSectionWithScroll>
             <ProfileCard>
               <Image
                 style={{ borderRadius: "50%" }}
                 height={150}
                 width={150}
                 src={"/profile.webp"}
-                alt={`Profile of Lily Pointon`}
+                alt="Profile of Lily Pointon"
+                loading="eager" // Disable lazy loading
               />
               <Name>{TextStore.home.title}</Name>
               <Title>{TextStore.home.subtitle}</Title>
-              <Button
-                onClick={() =>
-                  window.open(
-                    "https://www.linkedin.com/in/lily-pointon-730476291",
-                    "_blank"
-                  )
-                }
+              <Link
+                href="https://www.linkedin.com/in/lily-pointon-730476291"
+                target="_blank"
+                style={{ paddingRight: "10px" }}
               >
-                LinkedIn
-              </Button>
+                <Image
+                  style={{ borderRadius: "15%" }}
+                  height={40}
+                  width={40}
+                  src={"/linkedin.webp"}
+                  alt="Linkedin logo"
+                  loading="eager" // Disable lazy loading
+                />
+              </Link>
+              <Link
+                href="https://www.instagram.com/lilys_glass_art/"
+                target="_blank"
+              >
+                <Image
+                  style={{ borderRadius: "15%" }}
+                  height={40}
+                  width={40}
+                  src={"/instagram.webp"}
+                  alt="Instagram logo"
+                  loading="eager" // Disable lazy loading
+                />
+              </Link>
             </ProfileCard>
-          </LeftSection>
+          </LeftSectionWithScroll>
 
-          <RightSection>
+          <RightSectionWithScroll>
             <BioCard>
               <Heading>{TextStore.home.heading}</Heading>
               <Description>{TextStore.home.bio}</Description>
@@ -100,7 +121,7 @@ export default function Main() {
                 {TextStore.home.bio_2}
               </Description>
             </BioCard>
-          </RightSection>
+          </RightSectionWithScroll>
         </Container>
       </Content>
       <PortfolioSamples />

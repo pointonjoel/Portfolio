@@ -25,7 +25,7 @@ export const FormContainer = styled.div(
 
 export const Heading = styled.h1(
   css({
-    fontSize: ["4em", null, "5em"],
+    fontSize: ["3em", null, "5em"],
     fontWeight: "bold",
     textAlign: "center",
     padding: ["30px", null, "10px"],

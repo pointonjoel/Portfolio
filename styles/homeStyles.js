@@ -25,18 +25,6 @@ export const Header = styled.p(
   })
 );
 
-export const LeftSection = styled.div(
-  css({
-    width: ["100%", null, "50%"], // Full width on small screens, 50% on larger screens
-    display: "flex",
-    alignItems: "center",
-    justifyContent: ["center", "flex-end"], // Centered on small screens
-    paddingRight: [0, "40px"], // Remove padding on small screens
-    paddingBottom: ["30px", 0], // Optional padding on small screens
-    paddingTop: ["40px", 0],
-  })
-);
-
 export const ProfileCard = styled.div`
   width: 300px;
   text-align: center;
@@ -56,38 +44,3 @@ export const Title = styled.p`
   color: ${(props) => props.theme.colors.dark};
   margin-bottom: 20px;
 `;
-
-export const RightSection = styled.div(
-  css({
-    width: ["100%", null, "50%"], // Full width on small screens, 50% on larger screens
-    padding: ["10px", "20px", "40px"], // Adjust padding for smaller screens
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: ["left", "center"],
-  })
-);
-
-export const BioCard = styled.div(
-  css({
-    width: ["100%", null, "80%"],
-    textAlign: ["center", "left"],
-    borderRadius: "2px",
-    padding: ["0px", "20px"],
-  })
-);
-
-export const Description = styled.p`
-  font-size: ${(props) => (props.light ? "1.1em" : "1.2em")};
-  line-height: 1.5;
-  margin: 20px 0;
-  font-weight: ${(props) => (props.light ? 300 : 400)};
-`;
-
-export const ButtonContainer = styled.div(
-  css({
-    display: "flex",
-    gap: "10px",
-    marginTop: "20px",
-    justifyContent: ["center", "left"],
-  })
-);

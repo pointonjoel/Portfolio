@@ -2,21 +2,65 @@ import { useRouter } from "next/router";
 import { TextStore } from "../../components/text/TextStore";
 import {
   Container,
-  Description,
   ProjectsContainer,
   ProjectsHeading,
-  Title,
-  TitleContainer,
   ScrollContainer,
-} from "../../styles/projectStyles";
-import { Button, FilledContainer } from "../../styles/commonStyles";
+  Button,
+  Heading,
+  Wrapper,
+  BackgroundDiv,
+  Content,
+  LeftSectionWithScroll,
+  RightSectionWithScroll,
+  BioCard,
+  Description,
+  ButtonContainer,
+} from "../../styles/commonStyles";
 import PortfolioSection from "../../components/portfolioSection/portfolioSection";
-import render1 from "../../public/Projects/Project 1/render.webp";
-import render2 from "../../public/Projects/Project 2/render.webp";
-import render3 from "../../public/Projects/Project 3/render.webp";
-import render4 from "../../public/Projects/Project 4/render.webp";
-import render5 from "../../public/Projects/Project 5/render.webp";
 import { useState, useEffect } from "react";
+
+const ProjectImage = ({ projectNum, projectName }) => {
+  const [imageExists, setImageExists] = useState(false);
+
+  useEffect(() => {
+    // Check if the image exists by making a request to the image URL
+    const checkImageExistence = async () => {
+      const response = await fetch(
+        `/Projects/Project ${projectNum}/render.webp`,
+        {
+          method: "HEAD", // Using HEAD to just check if the file exists
+        }
+      );
+      if (response.ok) {
+        setImageExists(true); // Image exists
+      } else {
+        setImageExists(false); // Image doesn't exist
+      }
+    };
+
+    checkImageExistence();
+  }, [projectNum]);
+
+  // Only render the <img> if the image exists
+  if (!imageExists) {
+    return null; // Render nothing if image doesn't exist
+  }
+
+  return (
+    <div style={{ width: "90%" }}>
+      <img
+        src={`/Projects/Project ${projectNum}/render.webp`}
+        alt={`${projectName} Render`}
+        loading="eager" // Disable lazy loading
+        style={{
+          objectFit: "cover", // Make the image cover the entire container
+          width: "100%", // Make the image stretch to fill the container's width
+          height: "100%", // Make the image stretch to fill the container's height
+        }}
+      />
+    </div>
+  );
+};
 
 const ErrorContent = (
   <>
@@ -37,60 +81,58 @@ const Project = () => {
   if (!id) return <div>Loading...</div>;
 
   const projectNum = Number(id) + 1;
-  const allProjects = Object.values(TextStore.projects);
+  const allProjects = TextStore.projects;
   const allProjectNames = Object.keys(allProjects);
   const validProject = allProjectNames.includes(id);
   if (!validProject) return ErrorContent;
 
   const project = allProjects[id];
 
-  let render = render1;
-  if (projectNum === 1) {
-    render = render1;
-  } else if (projectNum === 2) {
-    render = render2;
-  } else if (projectNum === 3) {
-    render = render3;
-  } else if (projectNum === 4) {
-    render = render4;
-  } else if (projectNum === 5) {
-    render = render5;
-  } else {
-    render = "";
-  }
-
   return (
     <>
-      <TitleContainer
-        style={{
-          backgroundImage: `url(${render.src})`,
-        }}
-      >
-        <Title>{project.name}</Title>
-      </TitleContainer>
-      <Container>
-        <a
-          href={`/Projects/Project ${projectNum}/download.${project.download}`}
-          download={`${project.name} Project`}
-        >
-          <Button>Download PDF</Button>
-        </a>
-      </Container>
+      <Wrapper>
+        <BackgroundDiv />
+        <Content>
+          <Container>
+            <LeftSectionWithScroll>
+              <ProjectImage
+                projectNum={projectNum}
+                projectName={project.name}
+              />
+            </LeftSectionWithScroll>
+            <RightSectionWithScroll>
+              <BioCard>
+                <Heading>{project.name}</Heading>
+                <Description>{project.description}</Description>
+                <ButtonContainer>
+                  <Button
+                    primary
+                    onClick={() => {
+                      const link = document.createElement("a");
+                      link.href = `/Projects/Project ${projectNum}/download.${project.download}`; // Relative path from the public folder
+                      link.download = `${project.name} Project`; // Sets the default file name for download
+                      link.click();
+                    }}
+                  >
+                    Portfolio
+                  </Button>
+                </ButtonContainer>
+              </BioCard>
+            </RightSectionWithScroll>
+          </Container>
+        </Content>
 
-      <FilledContainer style={{ marginBottom: "80px" }}>
-        <Description>{project.description}</Description>
-      </FilledContainer>
-
-      <ProjectsContainer>
-        <ProjectsHeading>Other Projects</ProjectsHeading>
-        <ScrollContainer>
-          {allProjects.map((project, index) =>
-            project.homepage && index != id ? (
-              <PortfolioSection project={project} id={index} key={index} />
-            ) : null
-          )}
-        </ScrollContainer>
-      </ProjectsContainer>
+        <ProjectsContainer>
+          <ProjectsHeading>Other Projects</ProjectsHeading>
+          <ScrollContainer>
+            {allProjects.map((project, index) =>
+              project.homepage && index != id ? (
+                <PortfolioSection project={project} id={index} key={index} />
+              ) : null
+            )}
+          </ScrollContainer>
+        </ProjectsContainer>
+      </Wrapper>
     </>
   );
 };

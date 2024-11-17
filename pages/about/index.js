@@ -4,14 +4,27 @@ import {
   ImageContainer,
   MobileImageContainer,
 } from "../../styles/aboutStyles";
-import { Title } from "../../styles/commonStyles";
+import { Heading } from "../../styles/commonStyles";
 import Image from "next/legacy/image";
 import { TextStore } from "../../components/text/TextStore";
+import styled from "styled-components";
+import { css } from "@styled-system/css";
+
+// Create a styled component using styled-system for responsiveness
+const StyledContainer = styled.div`
+  ${css({
+    textAlign: "center",
+    marginTop: ["20px", null, "50px"],
+    fontSize: "0.8rem",
+  })}
+`;
 
 const Contact = () => {
   return (
     <>
-      <Title>About</Title>
+      <StyledContainer>
+        <Heading>About</Heading>
+      </StyledContainer>
       <MobileImageContainer>
         <Image
           style={{ borderRadius: "50%" }}

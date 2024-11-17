@@ -25,7 +25,7 @@ import {
   ProjectsContainer,
   ProjectsHeading,
   ScrollContainer,
-} from "../../styles/projectStyles";
+} from "../../styles/commonStyles";
 
 const ResponsiveProjectsContainer = styled(ProjectsContainer)`
   display: none; /* Hide by default */
@@ -43,7 +43,7 @@ const Contact = () => {
 
   let successMsg = "";
   let errorMsg = "";
-  const allProjects = Object.values(TextStore.projects);
+  const allProjects = TextStore.projects;
 
   const sendEmail = (e) => {
     setStatus({ type: "", value: "" });

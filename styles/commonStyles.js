@@ -1,44 +1,191 @@
-import styled from "styled-components";
-import css from "@styled-system/css";
+import styled, { keyframes, css as styledCss } from "styled-components";
+import { css } from "@styled-system/css";
+import useScrollAnimation from "../utils/useScrollAnimation";
 
-// export const Button = styled.button`
-//   background: ${(props) =>
-//     props.primary ? props.theme.colors.primary : "white"};
-//   color: ${(props) => (props.primary ? "white" : props.theme.colors.primary)};
-//   border: 2px solid ${(props) => props.theme.colors.primary};
+export const MainContainer = styled.div(
+  css({
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    textAlign: "centre",
+    marginBottom: "60px",
+  })
+);
 
-//   font-size: 17px;
-//   font-weight: bold;
-//   padding: 1px 10px;
-//   border-radius: 5px;
+export const TitleContainer = styled.div(
+  css({
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundSize: "contain",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center right",
+    backgroundSize: ["25% auto", "32% auto", "29% auto"],
+    height: ["300px", "400px", "500px"],
+  })
+);
 
-//   &:hover {
-//     transition: all 0.2s ease-in-out;
-//     color: #000000;
+export const ScrollContainer = styled.div(
+  css({
+    display: "flex",
+    width: "100%",
+    textAlign: "center",
+    justifyContent: [null, null, "center"],
+    overflow: "auto",
+  })
+);
 
-//     background: ${(props) =>
-//       props.primary ? "white" : props.theme.colors.primary};
-//     color: ${(props) => (props.primary ? props.theme.colors.primary : "white")};
-//   }
+export const ProjectsContainer = styled.div`
+  padding: 20px;
+  display: block;
+  width: 100%;
 
-//   &:active {
-//     transform: scale(0.92);
-//   }
-// `;
+  background-color: ${(props) => props.theme.colors.tertiary};
+`;
+
+export const ProjectsHeading = styled.div(
+  css({
+    padding: "10px",
+    textAlign: "center",
+    fontSize: ["17px", "20px", "25px"],
+  })
+);
+
+// Define keyframe animations
+const slideInFromLeft = keyframes`
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+`;
+
+const slideOutToLeft = keyframes`
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+`;
+
+const slideInFromRight = keyframes`
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+`;
+
+const slideOutToRight = keyframes`
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+`;
+
+export const LeftSection = styled.div`
+  ${css({
+    width: ["100%", null, "50%"], // Full width on small screens, 50% on larger screens
+    display: "flex",
+    alignItems: "center",
+    justifyContent: ["center", "flex-end"], // Centered on small screens
+    paddingRight: [0, "40px"], // Remove padding on small screens
+    paddingBottom: ["30px", 0], // Optional padding on small screens
+    paddingTop: ["40px", 0],
+  })}
+
+  animation: ${(props) =>
+    props.isAnimating
+      ? styledCss`
+          ${slideInFromLeft} 1s ease-out
+        `
+      : props.isExiting
+      ? styledCss`
+          ${slideOutToLeft} 1s ease-out
+        `
+      : "none"};
+  visibility: ${(props) => (props.isVisible ? "visible" : "hidden")};
+`;
+
+export const LeftSectionWithScroll = (props) => {
+  const { isVisible, isAnimating, isExiting } = useScrollAnimation(); // Use the custom hook
+
+  return (
+    <LeftSection
+      {...props}
+      isVisible={isVisible}
+      isAnimating={isAnimating}
+      isExiting={isExiting}
+    />
+  );
+};
+
+// Right section with combined styles and animation logic
+export const RightSection = styled.div`
+  ${css({
+    width: ["100%", null, "50%"], // Full width on small screens, 50% on larger screens
+    padding: ["10px", "20px", "40px"], // Adjust padding for smaller screens
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: ["left", "center"],
+  })}
+
+  animation: ${(props) =>
+    props.isAnimating
+      ? styledCss`
+          ${slideInFromRight} 1s ease-out
+        `
+      : props.isExiting
+      ? styledCss`
+          ${slideOutToRight} 1s ease-out
+        `
+      : "none"};
+  visibility: ${(props) => (props.isVisible ? "visible" : "hidden")};
+`;
+
+export const RightSectionWithScroll = (props) => {
+  const { isVisible, isAnimating, isExiting } = useScrollAnimation(); // Use the custom hook
+  console.log("heree", isVisible, isAnimating, isExiting);
+
+  return (
+    <RightSection
+      {...props}
+      isVisible={isVisible}
+      isAnimating={isAnimating}
+      isExiting={isExiting}
+    />
+  );
+};
 
 export const Wrapper = styled.div`
   position: relative;
+  overflow-x: hidden;
 `;
 
-export const BackgroundDiv = styled.div`
-  width: 40%;
-  height: 100%;
-  background-color: ${(props) => props.theme.colors.primary};
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-`;
+export const BackgroundDiv = styled.div(
+  css({
+    width: ["3%", null, "40%"],
+    height: "100%",
+    backgroundColor: (props) => props.colors.primary,
+    position: "absolute",
+    top: "0",
+    left: "0",
+    zIndex: "-1",
+  })
+);
 
 export const Content = styled.div(
   css({
@@ -55,6 +202,31 @@ export const Container = styled.div(
     flexDirection: ["column", "row"], // column on small screens, row on larger screens
     width: "100%",
     height: "100%",
+  })
+);
+
+export const BioCard = styled.div(
+  css({
+    width: ["100%", null, "80%"],
+    textAlign: ["center", "left"],
+    borderRadius: "2px",
+    padding: ["0px", "20px"],
+  })
+);
+
+export const Description = styled.p`
+  font-size: ${(props) => (props.light ? "1.1em" : "1.2em")};
+  line-height: 1.5;
+  margin: 20px 0;
+  font-weight: ${(props) => (props.light ? 300 : 400)};
+`;
+
+export const ButtonContainer = styled.div(
+  css({
+    display: "flex",
+    gap: "10px",
+    marginTop: "20px",
+    justifyContent: ["center", "left"],
   })
 );
 

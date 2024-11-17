@@ -44,7 +44,6 @@ const ProjectTitle = styled.div`
 
 // Update PortfolioSection component to use the Polaroid styling
 export const PortfolioSection = ({ project, id }) => {
-  console.log("project", project);
   return (
     <Link href={`/projects?id=${id}`} key={id} passHref legacyBehavior>
       <Polaroid key={id}>
@@ -53,6 +52,7 @@ export const PortfolioSection = ({ project, id }) => {
           alt={`Cover photo for ${project.name}`}
           width={200}
           height={200}
+          loading="eager" // Disable lazy loading
           // sizes="100vw"
           // objectFit="cover"
           // layout="fill"
