@@ -23,13 +23,13 @@ export const TextStore = {
       name: "Assistive Devices",
       description: "Description pending.",
       download: "pdf",
-      homepage: true,
+      homepage: false,
     },
     {
       name: "Humidifier",
       description: "Description pending.",
       download: "pdf",
-      homepage: true,
+      homepage: false,
     },
     {
       name: "Lamp",

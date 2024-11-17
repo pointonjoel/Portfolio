@@ -6,7 +6,6 @@ import {
   ProjectsHeading,
   ScrollContainer,
   Button,
-  Heading,
   Wrapper,
   BackgroundDiv,
   Content,
@@ -18,34 +17,10 @@ import {
 } from "../../styles/commonStyles";
 import PortfolioSection from "../../components/portfolioSection/portfolioSection";
 import { useState, useEffect } from "react";
+import styled from "styled-components";
+import css from "@styled-system/css";
 
 const ProjectImage = ({ projectNum, projectName }) => {
-  const [imageExists, setImageExists] = useState(false);
-
-  useEffect(() => {
-    // Check if the image exists by making a request to the image URL
-    const checkImageExistence = async () => {
-      const response = await fetch(
-        `/Projects/Project ${projectNum}/render.webp`,
-        {
-          method: "HEAD", // Using HEAD to just check if the file exists
-        }
-      );
-      if (response.ok) {
-        setImageExists(true); // Image exists
-      } else {
-        setImageExists(false); // Image doesn't exist
-      }
-    };
-
-    checkImageExistence();
-  }, [projectNum]);
-
-  // Only render the <img> if the image exists
-  if (!imageExists) {
-    return null; // Render nothing if image doesn't exist
-  }
-
   return (
     <div style={{ width: "90%" }}>
       <img
@@ -66,6 +41,13 @@ const ErrorContent = (
   <>
     <div>Project does not exist, please select a valid project ID!</div>
   </>
+);
+
+const Heading = styled.p(
+  css({
+    fontWeight: "bold",
+    fontSize: ["3em", null, "5em"],
+  })
 );
 
 const Project = () => {
@@ -102,7 +84,7 @@ const Project = () => {
             </LeftSectionWithScroll>
             <RightSectionWithScroll>
               <BioCard>
-                <Heading>{project.name}</Heading>
+                <Heading font-size={["1em"]}>{project.name}</Heading>
                 <Description>{project.description}</Description>
                 <ButtonContainer>
                   <Button
