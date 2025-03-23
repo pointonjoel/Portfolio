@@ -1,8 +1,6 @@
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
 
-import css from "@styled-system/css";
-
 import styled from "styled-components";
 
 export const Nav = styled.nav`
@@ -10,6 +8,9 @@ export const Nav = styled.nav`
   height: 50px;
   display: flex;
   justify-content: right;
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensure it stays on top */
   @media screen and (max-width: 500px) {
     padding: ${(props) => (props.$isOpen ? "0px" : "0.5rem 2vw")};
   }
@@ -30,7 +31,7 @@ export const NavLink = styled.a`
   }
 
   &:hover {
-    transition: all 0.2s ease-in-out;
+    transition: all 0.5s ease-in-out;
     color: black;
   }
 

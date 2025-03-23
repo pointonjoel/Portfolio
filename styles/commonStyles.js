@@ -158,7 +158,6 @@ export const RightSection = styled.div`
 
 export const RightSectionWithScroll = (props) => {
   const { isVisible, isAnimating, isExiting } = useScrollAnimation(); // Use the custom hook
-  console.log("heree", isVisible, isAnimating, isExiting);
 
   return (
     <RightSection

@@ -10,7 +10,6 @@ import { TextStore } from "../../components/text/TextStore";
 import styled from "styled-components";
 import { css } from "@styled-system/css";
 
-// Create a styled component using styled-system for responsiveness
 const StyledContainer = styled.div`
   ${css({
     textAlign: "center",

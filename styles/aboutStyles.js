@@ -5,8 +5,9 @@ export const Container = styled.div`
   display: flex;
   flex: 0 0 auto;
   padding: 20px 15%;
-  font-size: 20px;
+  font-size: 1.2em;
   margin: auto;
+  font-weight: 300;
 
   &:first-child {
     width: 150px;
